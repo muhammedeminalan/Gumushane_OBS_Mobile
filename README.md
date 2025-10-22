@@ -105,7 +105,3 @@ Geliştirme sürecinde **güvenlik** ve **veri gizliliğine** özel önem verilm
 **Sonuç olarak, projenin mevcut haliyle geliştirme sürecine devam edilmesi tavsiye edilmektedir.**
 
 ---
-
-⭐ **Proje Türü:** Mobil Uygulama (Flutter + Firebase)  
-🧩 **Kategori:** Eğitim Teknolojileri  
-🔒 **Odak Noktası:** Veri Güvenliği, Kullanıcı Deneyimi, Erişim Kolaylığı  
