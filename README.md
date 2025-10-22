@@ -1,4 +1,4 @@
-# 📘 Öğrenci Bilgi Sistemi (ÖBS)
+#  Öğrenci Bilgi Sistemi (ÖBS)
 
 **Hazırlayan:** 404NotFound Team  
 **Tarih:** 16/11/2025  
@@ -12,7 +12,7 @@
 
 ---
 
-## 🎯 1. Proje Tanımı ve Kapsamı
+##  1. Proje Tanımı ve Kapsamı
 
 ### 1.1. Problem veya Fırsatın Tanımı
 Günümüzde üniversitelerde öğrenci, öğretim elemanı ve yönetim arasındaki bilgi akışı çoğunlukla farklı sistemlerde yürütülmektedir. Bu da veri tutarsızlıkları, erişim zorlukları ve zaman kayıplarına yol açmaktadır.  
@@ -25,7 +25,7 @@ Manuel işlemler veya dağınık dijital araçlar, öğrenci notlarının, ders 
 
 ### 1.2. Projenin Kapsamı
 
-#### ✅ Yapacakları
+####  Yapacakları
 - Öğrencilerin kullanıcı hesabı oluşturup giriş yapabilmesi  
 - Öğrenci profillerinin görüntülenmesi ve düzenlenmesi  
 - Not, devamsızlık ve ders bilgilerine erişim  
@@ -34,14 +34,14 @@ Manuel işlemler veya dağınık dijital araçlar, öğrenci notlarının, ders 
 - Verilerin güvenli şekilde saklanması ve yönetimi  
 - Kullanıcı dostu, **responsive (mobil uyumlu)** arayüz  
 
-#### 🚫 Yapmayacakları
+####  Yapmayacakları
 - Online sınav yapma veya otomatik değerlendirme  
 - Finansal işlemler (harç ödeme vb.)  
 - Canlı iletişim (chat veya video konferans) özellikleri  
 
 ---
 
-## 🧠 2. TELOS Fizibilite Analizi
+##  2. TELOS Fizibilite Analizi
 
 ### 2.1. Teknik Fizibilite
 Proje, mevcut yazılım teknolojileriyle teknik olarak uygulanabilir durumdadır.  
@@ -96,7 +96,7 @@ Bu plan gerçekçi ve uygulanabilirdir.
 
 ---
 
-## ✅ 3. Sonuç ve Tavsiye
+##  3. Sonuç ve Tavsiye
 Yapılan analizler sonucunda **Öğrenci Bilgi Sistemi (ÖBS)** projesi teknik, ekonomik, yasal, operasyonel ve zamanlama açısından uygulanabilir durumdadır.  
 
 Proje, öğrenciler ve öğretim elemanları için pratik bir çözüm sunmaktadır.  
