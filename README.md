@@ -31,3 +31,10 @@ Manuel işlemler veya dağınık dijital araçlar, öğrenci notlarının, ders 
 - Yönetici paneli üzerinden öğrenci, öğretim elemanı ve ders bilgilerinin kontrolü  
 - Verilerin güvenli şekilde saklanması ve yönetimi  
 - Kullanıcı dostu, *responsive (mobil uyumlu)* arayüz
+
+####  Yapmayacakları
+- Online sınav yapma veya otomatik değerlendirme  
+- Finansal işlemler (harç ödeme vb.)  
+- Canlı iletişim (chat veya video konferans) özellikleri  
+
+---
