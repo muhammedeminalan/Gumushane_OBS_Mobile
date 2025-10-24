@@ -19,3 +19,22 @@ Manuel işlemler veya dağınık dijital araçlar, öğrenci notlarının, ders 
 *Öğrenci Bilgi Sistemi (ÖBS)* projesi, öğrenci ve öğretim elemanlarının akademik süreçlerdeki bilgiye hızlı, güvenli ve kullanıcı dostu bir şekilde erişmesini sağlamak amacıyla geliştirilmiştir. Proje, yönetim yükünü azaltmak ve dijitalleşme sürecine katkı sunmak için bir fırsat doğurmaktadır.
 
 ---
+---
+
+### 1.2. Projenin Kapsamı
+
+####  Yapacakları
+- Öğrencilerin kullanıcı hesabı oluşturup giriş yapabilmesi  
+- Öğrenci profillerinin görüntülenmesi ve düzenlenmesi  
+- Not, devamsızlık ve ders bilgilerine erişim  
+- Öğretim elemanlarının ders, not ve yoklama işlemlerini yönetebilmesi  
+- Yönetici paneli üzerinden öğrenci, öğretim elemanı ve ders bilgilerinin kontrolü  
+- Verilerin güvenli şekilde saklanması ve yönetimi  
+- Kullanıcı dostu, *responsive (mobil uyumlu)* arayüz
+
+####  Yapmayacakları
+- Online sınav yapma veya otomatik değerlendirme  
+- Finansal işlemler (harç ödeme vb.)  
+- Canlı iletişim (chat veya video konferans) özellikleri  
+
+---
