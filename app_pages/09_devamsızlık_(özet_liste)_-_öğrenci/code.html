@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="tr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Devamsızlık Durumu</title>
+<!-- Fonts and Icons -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#2b7cee",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101822",
+                        "surface-dark": "#1c242f",
+                        "surface-light": "#ffffff",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom scrollbar for cleaner look */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background-color: rgba(156, 163, 175, 0.5);
+            border-radius: 20px;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display min-h-screen flex flex-col overflow-x-hidden text-gray-900 dark:text-white">
+<!-- Top App Bar -->
+<div class="sticky top-0 z-20 flex items-center bg-background-light dark:bg-background-dark p-4 pb-2 justify-between border-b border-gray-200 dark:border-gray-800">
+<div class="flex size-10 shrink-0 items-center justify-center rounded-full hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors cursor-pointer">
+<span class="material-symbols-outlined text-gray-900 dark:text-white" style="font-size: 24px;">arrow_back</span>
+</div>
+<h2 class="text-gray-900 dark:text-white text-lg font-bold leading-tight tracking-tight flex-1 text-center pr-10">Devamsızlık Durumu</h2>
+</div>
+<!-- Main Content -->
+<div class="flex-1 flex flex-col gap-6 p-4">
+<!-- Hero Section: Circular Summary -->
+<div class="flex flex-col items-center justify-center pt-2 pb-4">
+<div class="relative size-48">
+<!-- SVG Donut Chart -->
+<svg class="size-full rotate-[-90deg]" viewbox="0 0 36 36">
+<!-- Background Circle -->
+<path class="text-gray-200 dark:text-gray-700" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="3">
+</path>
+<!-- Progress Circle (85% filled) -->
+<path class="text-primary drop-shadow-[0_0_10px_rgba(43,124,238,0.5)]" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-dasharray="85, 100" stroke-linecap="round" stroke-width="3">
+</path>
+</svg>
+<!-- Center Text -->
+<div class="absolute top-0 left-0 flex h-full w-full items-center justify-center flex-col">
+<span class="text-4xl font-extrabold text-gray-900 dark:text-white tracking-tight">%85</span>
+<span class="text-sm font-medium text-gray-500 dark:text-gray-400 mt-1">Genel Devamlılık</span>
+</div>
+</div>
+<div class="mt-6 w-full flex justify-between gap-4 px-2">
+<div class="flex-1 bg-surface-light dark:bg-surface-dark p-3 rounded-xl border border-gray-200 dark:border-gray-800 flex flex-col items-center">
+<span class="text-2xl font-bold text-gray-900 dark:text-white">6</span>
+<span class="text-xs text-gray-500 dark:text-gray-400">Aktif Ders</span>
+</div>
+<div class="flex-1 bg-surface-light dark:bg-surface-dark p-3 rounded-xl border border-red-500/20 dark:border-red-900/50 flex flex-col items-center relative overflow-hidden">
+<div class="absolute inset-0 bg-red-500/5 dark:bg-red-500/10"></div>
+<span class="text-2xl font-bold text-red-600 dark:text-red-400">1</span>
+<span class="text-xs text-red-600/70 dark:text-red-400/70 font-medium">Kritik</span>
+</div>
+</div>
+</div>
+<!-- Filters Section -->
+<div class="flex flex-col gap-4">
+<!-- Semester Select -->
+<label class="relative block">
+<span class="sr-only">Dönem Seçimi</span>
+<span class="absolute inset-y-0 left-0 flex items-center pl-3 text-gray-500 dark:text-gray-400 pointer-events-none">
+<span class="material-symbols-outlined" style="font-size: 20px;">calendar_month</span>
+</span>
+<select class="block w-full rounded-xl border-gray-200 dark:border-gray-700 bg-surface-light dark:bg-surface-dark py-3 pl-10 pr-10 text-gray-900 dark:text-white focus:border-primary focus:ring-primary sm:text-sm appearance-none cursor-pointer">
+<option value="2023-2024-fall">2023-2024 Güz Dönemi</option>
+<option value="2022-2023-spring">2022-2023 Bahar Dönemi</option>
+<option value="2022-2023-fall">2022-2023 Güz Dönemi</option>
+</select>
+<span class="absolute inset-y-0 right-0 flex items-center pr-3 text-gray-500 dark:text-gray-400 pointer-events-none">
+<span class="material-symbols-outlined" style="font-size: 20px;">expand_more</span>
+</span>
+</label>
+<!-- Status Filter Chips -->
+<div class="flex gap-2 overflow-x-auto pb-2 no-scrollbar">
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-primary pl-4 pr-4 transition-transform active:scale-95">
+<span class="text-white text-sm font-medium leading-normal">Tümü</span>
+</button>
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-surface-light dark:bg-surface-dark border border-gray-200 dark:border-gray-700 pl-4 pr-4 transition-transform active:scale-95 hover:bg-gray-100 dark:hover:bg-gray-800">
+<span class="size-2 rounded-full bg-red-500"></span>
+<span class="text-gray-700 dark:text-gray-200 text-sm font-medium leading-normal">Kritik</span>
+</button>
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-surface-light dark:bg-surface-dark border border-gray-200 dark:border-gray-700 pl-4 pr-4 transition-transform active:scale-95 hover:bg-gray-100 dark:hover:bg-gray-800">
+<span class="size-2 rounded-full bg-yellow-500"></span>
+<span class="text-gray-700 dark:text-gray-200 text-sm font-medium leading-normal">Uyarı</span>
+</button>
+</div>
+</div>
+<!-- Course List -->
+<div class="flex flex-col gap-3 pb-8">
+<h3 class="text-sm font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider pl-1">Ders Listesi</h3>
+<!-- Item 1: Critical -->
+<div class="group relative flex items-center justify-between gap-4 rounded-xl bg-surface-light dark:bg-surface-dark p-4 shadow-sm border border-l-4 border-gray-200 dark:border-gray-800 border-l-red-500 transition-all hover:bg-gray-50 dark:hover:bg-[#252e3b] cursor-pointer">
+<div class="flex flex-1 items-start gap-4">
+<div class="flex size-12 shrink-0 items-center justify-center rounded-lg bg-red-100 dark:bg-red-900/30 text-red-600 dark:text-red-400">
+<span class="material-symbols-outlined">warning</span>
+</div>
+<div class="flex flex-col gap-1 flex-1">
+<div class="flex justify-between items-start">
+<p class="text-gray-900 dark:text-white text-base font-semibold leading-tight line-clamp-1">Fizik I (PHYS101)</p>
+<span class="text-xs font-bold text-red-600 dark:text-red-400 bg-red-100 dark:bg-red-900/30 px-2 py-0.5 rounded ml-2 whitespace-nowrap">Kritik</span>
+</div>
+<div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-1.5 mt-2 mb-1">
+<div class="bg-red-500 h-1.5 rounded-full" style="width: 95%"></div>
+</div>
+<div class="flex justify-between items-center text-xs">
+<span class="text-gray-500 dark:text-gray-400">%95 Dolu</span>
+<span class="text-red-600 dark:text-red-400 font-medium">Kalan Hak: 1 Saat</span>
+</div>
+</div>
+</div>
+<div class="absolute inset-0 rounded-xl ring-1 ring-inset ring-transparent group-hover:ring-black/5 dark:group-hover:ring-white/5 pointer-events-none"></div>
+</div>
+<!-- Item 2: Warning -->
+<div class="group relative flex items-center justify-between gap-4 rounded-xl bg-surface-light dark:bg-surface-dark p-4 shadow-sm border border-l-4 border-gray-200 dark:border-gray-800 border-l-yellow-500 transition-all hover:bg-gray-50 dark:hover:bg-[#252e3b] cursor-pointer">
+<div class="flex flex-1 items-start gap-4">
+<div class="flex size-12 shrink-0 items-center justify-center rounded-lg bg-yellow-100 dark:bg-yellow-900/30 text-yellow-600 dark:text-yellow-400">
+<span class="material-symbols-outlined">notifications_active</span>
+</div>
+<div class="flex flex-col gap-1 flex-1">
+<div class="flex justify-between items-start">
+<p class="text-gray-900 dark:text-white text-base font-semibold leading-tight line-clamp-1">Matematik I (MAT101)</p>
+<span class="text-xs font-bold text-yellow-600 dark:text-yellow-400 bg-yellow-100 dark:bg-yellow-900/30 px-2 py-0.5 rounded ml-2 whitespace-nowrap">Dikkat</span>
+</div>
+<div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-1.5 mt-2 mb-1">
+<div class="bg-yellow-500 h-1.5 rounded-full" style="width: 75%"></div>
+</div>
+<div class="flex justify-between items-center text-xs">
+<span class="text-gray-500 dark:text-gray-400">%75 Dolu</span>
+<span class="text-yellow-600 dark:text-yellow-400 font-medium">Kalan Hak: 3 Saat</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Item 3: Safe -->
+<div class="group relative flex items-center justify-between gap-4 rounded-xl bg-surface-light dark:bg-surface-dark p-4 shadow-sm border border-l-4 border-gray-200 dark:border-gray-800 border-l-primary transition-all hover:bg-gray-50 dark:hover:bg-[#252e3b] cursor-pointer">
+<div class="flex flex-1 items-start gap-4">
+<div class="flex size-12 shrink-0 items-center justify-center rounded-lg bg-blue-100 dark:bg-blue-900/30 text-primary">
+<span class="material-symbols-outlined">school</span>
+</div>
+<div class="flex flex-col gap-1 flex-1">
+<div class="flex justify-between items-start">
+<p class="text-gray-900 dark:text-white text-base font-semibold leading-tight line-clamp-1">Prog. Giriş (CS101)</p>
+</div>
+<div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-1.5 mt-2 mb-1">
+<div class="bg-primary h-1.5 rounded-full" style="width: 20%"></div>
+</div>
+<div class="flex justify-between items-center text-xs">
+<span class="text-gray-500 dark:text-gray-400">%20 Dolu</span>
+<span class="text-primary font-medium">Kalan Hak: 10 Saat</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Item 4: Safe -->
+<div class="group relative flex items-center justify-between gap-4 rounded-xl bg-surface-light dark:bg-surface-dark p-4 shadow-sm border border-l-4 border-gray-200 dark:border-gray-800 border-l-primary transition-all hover:bg-gray-50 dark:hover:bg-[#252e3b] cursor-pointer">
+<div class="flex flex-1 items-start gap-4">
+<div class="flex size-12 shrink-0 items-center justify-center rounded-lg bg-blue-100 dark:bg-blue-900/30 text-primary">
+<span class="material-symbols-outlined">history_edu</span>
+</div>
+<div class="flex flex-col gap-1 flex-1">
+<div class="flex justify-between items-start">
+<p class="text-gray-900 dark:text-white text-base font-semibold leading-tight line-clamp-1">Tarih I (HIST101)</p>
+</div>
+<div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-1.5 mt-2 mb-1">
+<div class="bg-primary h-1.5 rounded-full" style="width: 10%"></div>
+</div>
+<div class="flex justify-between items-center text-xs">
+<span class="text-gray-500 dark:text-gray-400">%10 Dolu</span>
+<span class="text-primary font-medium">Kalan Hak: 12 Saat</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Item 5: Safe -->
+<div class="group relative flex items-center justify-between gap-4 rounded-xl bg-surface-light dark:bg-surface-dark p-4 shadow-sm border border-l-4 border-gray-200 dark:border-gray-800 border-l-primary transition-all hover:bg-gray-50 dark:hover:bg-[#252e3b] cursor-pointer">
+<div class="flex flex-1 items-start gap-4">
+<div class="flex size-12 shrink-0 items-center justify-center rounded-lg bg-blue-100 dark:bg-blue-900/30 text-primary">
+<span class="material-symbols-outlined">translate</span>
+</div>
+<div class="flex flex-col gap-1 flex-1">
+<div class="flex justify-between items-start">
+<p class="text-gray-900 dark:text-white text-base font-semibold leading-tight line-clamp-1">İngilizce I (ENG101)</p>
+</div>
+<div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-1.5 mt-2 mb-1">
+<div class="bg-primary h-1.5 rounded-full" style="width: 45%"></div>
+</div>
+<div class="flex justify-between items-center text-xs">
+<span class="text-gray-500 dark:text-gray-400">%45 Dolu</span>
+<span class="text-primary font-medium">Kalan Hak: 6 Saat</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom Spacing -->
+<div class="h-5"></div>
+</div>
+</body></html>

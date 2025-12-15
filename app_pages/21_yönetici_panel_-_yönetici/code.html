@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Admin Dashboard</title>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#2b7cee",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101822",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body>
+<div class="relative flex h-full min-h-screen w-full flex-col bg-background-light dark:bg-background-dark group/design-root overflow-x-hidden font-display text-[#111418] dark:text-white pb-20">
+<!-- Header -->
+<div class="flex items-center bg-background-light dark:bg-background-dark p-4 pb-2 justify-between sticky top-0 z-10 border-b border-gray-200 dark:border-gray-800">
+<div class="flex size-12 shrink-0 items-center gap-3">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 border-2 border-primary/20" data-alt="Profile picture of the admin user" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDgawSYzhPiOpwtKrzoNBpnb64E04QMZ5-dxJSnXFEFRGxgdkizMXZukmZXhHq-5crPXx1oweqEasWIsPB9gk2wQ-2hvq69EBsCAe7LzDeP18AW4GoXb5YBU1FF5WBbC1SFElvM3ADypnq4Bph5mr_OuiUDvcmov-iJIDzWwnZHgt7w_WV5GgY2HX23WUcAKGhBi8l9eIqQRyFQKDCuc9DjMGO0IC4nPO0nU6GK6-dFwsJvkAW0XgrG_GTRpgcDePQP4gBqaOf6ia0H");'></div>
+<div class="flex flex-col">
+<p class="text-xs text-gray-500 dark:text-gray-400 font-medium leading-none">Hoşgeldin,</p>
+<h2 class="text-[#111418] dark:text-white text-lg font-bold leading-tight tracking-[-0.015em]">Yönetici</h2>
+</div>
+</div>
+<div class="flex w-12 items-center justify-end">
+<button class="flex size-10 cursor-pointer items-center justify-center overflow-hidden rounded-full bg-transparent hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors text-[#111418] dark:text-white gap-2 min-w-0 p-0 relative">
+<span class="material-symbols-outlined" style="font-size: 24px;">notifications</span>
+<span class="absolute top-2 right-2 size-2 bg-primary rounded-full border border-background-light dark:border-background-dark"></span>
+</button>
+</div>
+</div>
+<!-- KPI Stats -->
+<div class="flex flex-col gap-4 p-4">
+<div class="grid grid-cols-2 gap-3">
+<!-- Stat Card 1 -->
+<div class="flex flex-col gap-2 rounded-xl p-4 bg-white dark:bg-[#1A222D] border border-gray-200 dark:border-gray-800 shadow-sm">
+<div class="flex items-center gap-2">
+<div class="flex items-center justify-center size-8 rounded-lg bg-primary/10 text-primary">
+<span class="material-symbols-outlined" style="font-size: 20px;">group</span>
+</div>
+<p class="text-gray-500 dark:text-gray-400 text-xs font-medium leading-normal line-clamp-1">Toplam Kullanıcı</p>
+</div>
+<div class="flex items-end justify-between">
+<p class="text-[#111418] dark:text-white tracking-tight text-2xl font-bold leading-tight">12,450</p>
+<p class="text-[#0bda5e] text-xs font-bold leading-normal mb-1 flex items-center">
+<span class="material-symbols-outlined" style="font-size: 14px;">arrow_upward</span>5%
+                        </p>
+</div>
+</div>
+<!-- Stat Card 2 -->
+<div class="flex flex-col gap-2 rounded-xl p-4 bg-white dark:bg-[#1A222D] border border-gray-200 dark:border-gray-800 shadow-sm">
+<div class="flex items-center gap-2">
+<div class="flex items-center justify-center size-8 rounded-lg bg-primary/10 text-primary">
+<span class="material-symbols-outlined" style="font-size: 20px;">school</span>
+</div>
+<p class="text-gray-500 dark:text-gray-400 text-xs font-medium leading-normal line-clamp-1">Aktif Öğrenci</p>
+</div>
+<div class="flex items-end justify-between">
+<p class="text-[#111418] dark:text-white tracking-tight text-2xl font-bold leading-tight">8,200</p>
+<p class="text-[#0bda5e] text-xs font-bold leading-normal mb-1 flex items-center">
+<span class="material-symbols-outlined" style="font-size: 14px;">arrow_upward</span>2%
+                        </p>
+</div>
+</div>
+<!-- Stat Card 3 -->
+<div class="flex flex-col gap-2 rounded-xl p-4 bg-white dark:bg-[#1A222D] border border-gray-200 dark:border-gray-800 shadow-sm">
+<div class="flex items-center gap-2">
+<div class="flex items-center justify-center size-8 rounded-lg bg-orange-500/10 text-orange-500">
+<span class="material-symbols-outlined" style="font-size: 20px;">pending_actions</span>
+</div>
+<p class="text-gray-500 dark:text-gray-400 text-xs font-medium leading-normal line-clamp-1">Bekleyen Onay</p>
+</div>
+<div class="flex items-end justify-between">
+<p class="text-[#111418] dark:text-white tracking-tight text-2xl font-bold leading-tight">15</p>
+<p class="text-gray-400 text-xs font-medium leading-normal mb-1">0%</p>
+</div>
+</div>
+<!-- Stat Card 4 -->
+<div class="flex flex-col gap-2 rounded-xl p-4 bg-white dark:bg-[#1A222D] border border-gray-200 dark:border-gray-800 shadow-sm">
+<div class="flex items-center gap-2">
+<div class="flex items-center justify-center size-8 rounded-lg bg-green-500/10 text-green-500">
+<span class="material-symbols-outlined" style="font-size: 20px;">dns</span>
+</div>
+<p class="text-gray-500 dark:text-gray-400 text-xs font-medium leading-normal line-clamp-1">Sistem Durumu</p>
+</div>
+<div class="flex items-end justify-between">
+<p class="text-[#111418] dark:text-white tracking-tight text-2xl font-bold leading-tight">%99.9</p>
+<p class="text-[#0bda5e] text-xs font-bold leading-normal mb-1 flex items-center">
+<span class="material-symbols-outlined" style="font-size: 14px;">check</span>
+</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Quick Access Section -->
+<div class="flex flex-col">
+<h3 class="text-[#111418] dark:text-white text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-2">Hızlı Erişim</h3>
+<div class="grid grid-cols-2 gap-3 px-4">
+<!-- Quick Action 1 -->
+<div class="relative group cursor-pointer overflow-hidden rounded-xl h-32 flex flex-col justify-end p-4 shadow-sm transition-transform active:scale-95">
+<div class="absolute inset-0 bg-cover bg-center transition-transform group-hover:scale-105" data-alt="Abstract gradient background with blue tones" style='background-image: linear-gradient(180deg, rgba(43, 124, 238, 0.4) 0%, rgba(16, 24, 34, 0.9) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuDNo4_zG1lIv6Dfkk36WtAwXgTO_b3MJ5SWQekkAL-oRgWm3FF4yF9O53DRs67CHx1WCs_dddpZNN8Hu8fmzPQh_ibK50wwQl5gsTQk-bb4fXj9vG3fNZIIp19PvPnoE3PMYUIH_hv2df-mTMQKJHaZsrgpElehsSUsH47FNsfGkPIFPa108HV8jXrQxMKjLqq09NsUwupfCPSqbWylNMmYNFuTWpoBEbV0dUpGmGElaWD9WZ-_-oFTkUI2IR1JYfWzcsFj180r6S7F");'></div>
+<div class="relative z-10 flex flex-col gap-1">
+<div class="bg-white/20 backdrop-blur-md size-8 rounded-lg flex items-center justify-center text-white mb-1">
+<span class="material-symbols-outlined" style="font-size: 20px;">manage_accounts</span>
+</div>
+<p class="text-white text-sm font-bold leading-tight">Kullanıcı<br/>Yönetimi</p>
+</div>
+</div>
+<!-- Quick Action 2 -->
+<div class="relative group cursor-pointer overflow-hidden rounded-xl h-32 flex flex-col justify-end p-4 shadow-sm transition-transform active:scale-95">
+<div class="absolute inset-0 bg-cover bg-center transition-transform group-hover:scale-105" data-alt="Abstract technological pattern background" style='background-image: linear-gradient(180deg, rgba(43, 124, 238, 0.2) 0%, rgba(16, 24, 34, 0.9) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuBXLrmCOYTxQKx6RwbuhiyKLoE0UG4oVYEdPlJtiAVDVblItNCyf8h4RtWqKtJMwvqC4gwsjkDi4LEdcriOJf7dQC-PMgpcxvfR49-HPqRBhAbco-aVLSDROMAgAxPyKIZNJV-ERWSLy86SB2L4hXAW1LgAAnYqR-PUeZhsaVUw_xnUVI5glpFNQIdy2AwG1RvKCz0uKi8TSknmj_1FoXU0u7ZIpKX1ptsIRn4j26VmuBXNiGNvKmzOrMWsfVJeVx0Xtg16b7Xql7dX");'></div>
+<div class="relative z-10 flex flex-col gap-1">
+<div class="bg-white/20 backdrop-blur-md size-8 rounded-lg flex items-center justify-center text-white mb-1">
+<span class="material-symbols-outlined" style="font-size: 20px;">settings</span>
+</div>
+<p class="text-white text-sm font-bold leading-tight">Sistem<br/>Ayarları</p>
+</div>
+</div>
+<!-- Quick Action 3 -->
+<div class="relative group cursor-pointer overflow-hidden rounded-xl h-24 flex items-center px-4 shadow-sm bg-white dark:bg-[#1A222D] border border-gray-200 dark:border-gray-800 transition-colors hover:border-primary/50">
+<div class="size-10 rounded-full bg-primary/10 flex items-center justify-center text-primary shrink-0 mr-3">
+<span class="material-symbols-outlined">receipt_long</span>
+</div>
+<p class="text-[#111418] dark:text-white text-sm font-bold leading-tight">Tüm<br/>Loglar</p>
+</div>
+<!-- Quick Action 4 -->
+<div class="relative group cursor-pointer overflow-hidden rounded-xl h-24 flex items-center px-4 shadow-sm bg-white dark:bg-[#1A222D] border border-gray-200 dark:border-gray-800 transition-colors hover:border-primary/50">
+<div class="size-10 rounded-full bg-orange-500/10 flex items-center justify-center text-orange-500 shrink-0 mr-3">
+<span class="material-symbols-outlined">approval</span>
+</div>
+<p class="text-[#111418] dark:text-white text-sm font-bold leading-tight">Ders<br/>Onayları</p>
+</div>
+</div>
+</div>
+<!-- Recent Logs Section -->
+<div class="flex flex-col mt-4">
+<div class="flex items-center justify-between px-4 pb-2 pt-2">
+<h3 class="text-[#111418] dark:text-white text-lg font-bold leading-tight tracking-[-0.015em]">Son Log Özeti</h3>
+<button class="text-primary text-sm font-medium">Tümünü Gör</button>
+</div>
+<div class="flex flex-col px-4 gap-3">
+<!-- Log Item 1 -->
+<div class="flex items-start gap-3 p-3 rounded-lg bg-white dark:bg-[#1A222D] border border-gray-200 dark:border-gray-800 shadow-sm">
+<div class="size-10 shrink-0 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center text-gray-500">
+<span class="material-symbols-outlined text-lg">lock_reset</span>
+</div>
+<div class="flex flex-col flex-1">
+<p class="text-[#111418] dark:text-white text-sm font-medium leading-snug">Ahmet Yılmaz (Öğrenci) şifre sıfırladı</p>
+<p class="text-gray-500 dark:text-gray-400 text-xs mt-1">Bugün, 10:45</p>
+</div>
+</div>
+<!-- Log Item 2 -->
+<div class="flex items-start gap-3 p-3 rounded-lg bg-white dark:bg-[#1A222D] border border-gray-200 dark:border-gray-800 shadow-sm">
+<div class="size-10 shrink-0 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center text-gray-500">
+<span class="material-symbols-outlined text-lg">edit_note</span>
+</div>
+<div class="flex flex-col flex-1">
+<p class="text-[#111418] dark:text-white text-sm font-medium leading-snug">Mehmet Hoca not girişi yaptı</p>
+<p class="text-gray-500 dark:text-gray-400 text-xs mt-1">Bugün, 10:30</p>
+</div>
+</div>
+<!-- Log Item 3 -->
+<div class="flex items-start gap-3 p-3 rounded-lg bg-white dark:bg-[#1A222D] border border-gray-200 dark:border-gray-800 shadow-sm">
+<div class="size-10 shrink-0 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center text-gray-500">
+<span class="material-symbols-outlined text-lg">backup</span>
+</div>
+<div class="flex flex-col flex-1">
+<p class="text-[#111418] dark:text-white text-sm font-medium leading-snug">Sistem yedeği alındı</p>
+<p class="text-gray-500 dark:text-gray-400 text-xs mt-1">Bugün, 09:00</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Spacer for Bottom Nav -->
+<div class="h-24"></div>
+<!-- Bottom Navigation -->
+<div class="fixed bottom-0 left-0 w-full bg-white dark:bg-[#111418] border-t border-gray-200 dark:border-gray-800 pb-safe pt-2 px-6">
+<div class="flex items-center justify-between">
+<button class="flex flex-col items-center gap-1 p-2 min-w-[64px] text-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">dashboard</span>
+<span class="text-[10px] font-medium">Panel</span>
+</button>
+<button class="flex flex-col items-center gap-1 p-2 min-w-[64px] text-gray-400 dark:text-gray-500 hover:text-primary dark:hover:text-primary transition-colors">
+<span class="material-symbols-outlined">group</span>
+<span class="text-[10px] font-medium">Kullanıcılar</span>
+</button>
+<button class="flex flex-col items-center gap-1 p-2 min-w-[64px] text-gray-400 dark:text-gray-500 hover:text-primary dark:hover:text-primary transition-colors">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-[10px] font-medium">Ayarlar</span>
+</button>
+<button class="flex flex-col items-center gap-1 p-2 min-w-[64px] text-gray-400 dark:text-gray-500 hover:text-primary dark:hover:text-primary transition-colors">
+<div class="size-6 rounded-full bg-gray-200 dark:bg-gray-700 overflow-hidden" data-alt="Small profile avatar for navigation" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBmVGP082cn5kw2TspOxR_MCqE52m1Y7mSqltrRXwwpzB6vCI9nghwDUX50t3JGqpyCZ46hDOKiCxZmFzEqR_y2eaisumXRTx0BwaezBF3yguiB99_dNZWKtiBrkDezl1I3Ai7gxTwE4VHaWrOAAaxCkSw7XaW-eXHZ0mPvgHF0AzZmM9Rhhu2CGTcDpRZizSRRwquySL2mdgWNgFrwSVi553rMJilJhfX08EOPBb_7clT0TYh2UbLV-0nYlg8aojIi6j49KiFOhGfk"); background-size: cover;'></div>
+<span class="text-[10px] font-medium">Profil</span>
+</button>
+</div>
+<!-- iOS Home Indicator simulation -->
+<div class="h-1 w-32 bg-gray-300 dark:bg-gray-700 rounded-full mx-auto mt-2 mb-1"></div>
+</div>
+</div>
+</body></html>

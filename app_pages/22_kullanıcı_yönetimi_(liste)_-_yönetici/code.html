@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="tr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Kullanıcı Yönetimi - Yönetici</title>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Theme Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#2b7cee",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101822",
+                        "surface-dark": "#1C2530", // Custom surface color for cards in dark mode
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom scrollbar hiding for clean UI */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .icon-filled {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white font-display antialiased selection:bg-primary selection:text-white">
+<div class="relative flex h-full min-h-screen w-full flex-col overflow-x-hidden max-w-md mx-auto bg-white dark:bg-background-dark shadow-2xl">
+<!-- Top App Bar -->
+<div class="sticky top-0 z-20 flex flex-col gap-2 bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-sm p-4 pb-2 border-b border-gray-200 dark:border-gray-800">
+<div class="flex items-center h-12 justify-between">
+<button class="text-slate-900 dark:text-white flex size-12 shrink-0 items-center justify-start transition-colors hover:text-primary">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<div class="flex items-center justify-end gap-2">
+<button class="flex size-10 items-center justify-center rounded-full bg-transparent hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors text-slate-900 dark:text-white">
+<span class="material-symbols-outlined">filter_list</span>
+</button>
+</div>
+</div>
+<div class="flex justify-between items-end">
+<p class="text-slate-900 dark:text-white tracking-tight text-[28px] font-bold leading-tight">Kullanıcı Yönetimi</p>
+<p class="text-primary text-sm font-medium pb-1">Toplam: 2,453</p>
+</div>
+</div>
+<!-- Search Bar -->
+<div class="px-4 py-3 sticky top-[108px] z-10 bg-background-light dark:bg-background-dark">
+<label class="flex flex-col w-full">
+<div class="relative flex w-full items-center rounded-xl h-12 bg-white dark:bg-surface-dark shadow-sm border border-gray-200 dark:border-gray-700 focus-within:border-primary focus-within:ring-1 focus-within:ring-primary transition-all">
+<div class="absolute left-4 text-gray-400 flex items-center justify-center pointer-events-none">
+<span class="material-symbols-outlined">search</span>
+</div>
+<input class="w-full h-full bg-transparent border-none focus:outline-none focus:ring-0 text-slate-900 dark:text-white placeholder:text-gray-400 pl-12 pr-4 text-base font-normal rounded-xl" placeholder="İsim, ID veya E-posta ile ara" value=""/>
+</div>
+</label>
+</div>
+<!-- Filter Chips -->
+<div class="flex gap-3 px-4 py-2 overflow-x-auto no-scrollbar">
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-primary pl-5 pr-5 shadow-md shadow-primary/20 transition-transform active:scale-95">
+<p class="text-white text-sm font-medium leading-normal">Tümü</p>
+</button>
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-white dark:bg-surface-dark border border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800 pl-5 pr-5 transition-transform active:scale-95">
+<p class="text-slate-600 dark:text-gray-300 text-sm font-medium leading-normal">Öğrenci</p>
+</button>
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-white dark:bg-surface-dark border border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800 pl-5 pr-5 transition-transform active:scale-95">
+<p class="text-slate-600 dark:text-gray-300 text-sm font-medium leading-normal">Öğretim Elemanı</p>
+</button>
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-white dark:bg-surface-dark border border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800 pl-5 pr-5 transition-transform active:scale-95">
+<p class="text-slate-600 dark:text-gray-300 text-sm font-medium leading-normal">İdari</p>
+</button>
+</div>
+<!-- User List -->
+<div class="flex flex-col pb-24 pt-2">
+<!-- Section Header -->
+<div class="px-4 py-2 flex items-center gap-2">
+<span class="text-xs font-bold text-gray-400 uppercase tracking-wider">Son Eklenenler</span>
+</div>
+<!-- List Item: Student (Active) -->
+<div class="group flex items-center gap-4 px-4 py-3 cursor-pointer hover:bg-gray-50 dark:hover:bg-surface-dark/50 transition-colors border-b border-gray-100 dark:border-gray-800/50">
+<div class="relative">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full h-12 w-12" data-alt="Portrait of a male student smiling" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCKeZVNjkpv9WhHl5_jVcAN4epHvct7uPfZc4jG51J4P7VleWEdstEUAXk9Rk9tXdQuakhKG3CbZ5OBbjYNrAZnDnl7wBt9uXZesFtnIrMyzDXC9xWn9e_W6gmg5xjur4AF9jYRe8OSR9MtCnLXDiGemSCv0eskM_msT348mn1gfvt5rcJ6QwAHyl8_bvQmfy3tyJbhVXfOK5tglieprioFzSz97XKVETjbkBPD-MGtvocQnwCSySbRO5kVkVNv8siQox5m3EgxNj9_");'></div>
+<div class="absolute bottom-0 right-0 w-3 h-3 bg-green-500 rounded-full border-2 border-white dark:border-background-dark"></div>
+</div>
+<div class="flex flex-col justify-center flex-1 min-w-0">
+<p class="text-slate-900 dark:text-white text-base font-semibold leading-normal truncate">Ahmet Yılmaz</p>
+<div class="flex items-center gap-1.5">
+<span class="text-xs font-medium px-2 py-0.5 rounded bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300">Öğrenci</span>
+<p class="text-gray-500 dark:text-gray-400 text-sm font-normal truncate">• 2021123456</p>
+</div>
+</div>
+<div class="shrink-0">
+<button class="text-gray-400 hover:text-primary p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+<span class="material-symbols-outlined text-[24px]">more_vert</span>
+</button>
+</div>
+</div>
+<!-- List Item: Faculty (Active) -->
+<div class="group flex items-center gap-4 px-4 py-3 cursor-pointer hover:bg-gray-50 dark:hover:bg-surface-dark/50 transition-colors border-b border-gray-100 dark:border-gray-800/50">
+<div class="relative">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full h-12 w-12" data-alt="Portrait of a female professor with glasses" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBvVHPRNDIe7rxI-aiyVW6_6v9XMhDv9kXzXJn6JCeB_mXNjX8YsrxPBfUsD3uhAqkwsH4rEkAibBrkDYJEfeW6zQyDQRWY9VO9GvvIxmGk7TEZKZvRDl5naY2hkOmSdDKNT2G9-a3-IVdAkFvqyz8gG0ki4xeW9dGFEUgbLNIwvpfgp4EKYmJ9Aei3cFm2uqSLdXEo315o75BVJaVpwMqD1ImTAGjPkeEL7GivDcKM9RWbb9xlOzW9xqLoCPQ_E9_UUcunjYKayqq_");'></div>
+<div class="absolute bottom-0 right-0 w-3 h-3 bg-green-500 rounded-full border-2 border-white dark:border-background-dark"></div>
+</div>
+<div class="flex flex-col justify-center flex-1 min-w-0">
+<p class="text-slate-900 dark:text-white text-base font-semibold leading-normal truncate">Dr. Ayşe Kaya</p>
+<div class="flex items-center gap-1.5">
+<span class="text-xs font-medium px-2 py-0.5 rounded bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300">Öğretim Elemanı</span>
+<p class="text-gray-500 dark:text-gray-400 text-sm font-normal truncate">• 19985541</p>
+</div>
+</div>
+<div class="shrink-0">
+<button class="text-gray-400 hover:text-primary p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+<span class="material-symbols-outlined text-[24px]">more_vert</span>
+</button>
+</div>
+</div>
+<!-- List Item: Student (Locked) -->
+<div class="group flex items-center gap-4 px-4 py-3 cursor-pointer bg-red-50/50 dark:bg-red-900/5 hover:bg-red-50 dark:hover:bg-red-900/10 transition-colors border-b border-gray-100 dark:border-gray-800/50">
+<div class="relative grayscale opacity-80">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full h-12 w-12" data-alt="Portrait of a male student with serious expression" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCfmAhGp4MYx7OugY_v_dHFSFpH_4KAqgUdFJ8FxYUDxN3kd1zytaKPNRXSUra1NMGW6TDpnvyd_Qo7-XAye5FE-vICJu6yXptMv5VRH9vmmxO1WkLubEgm2F8Y3owkt-7rfsfSudIZM5pA2XnhGbmHvIaaSffd90q9wumPiG5JkJ8tEkDyOFM7Yd26OaOo2IVPlx1RUUAJjmHzehKsedg-yk7aSaSX_oBwq-7Y2G5k9wz6Q6z14fC7ov149ZS_JT_HaBYXZ92gTt2q");'></div>
+<div class="absolute bottom-0 right-0 w-3 h-3 bg-red-500 rounded-full border-2 border-white dark:border-background-dark"></div>
+</div>
+<div class="flex flex-col justify-center flex-1 min-w-0 opacity-75 group-hover:opacity-100 transition-opacity">
+<div class="flex items-center gap-2">
+<p class="text-slate-900 dark:text-white text-base font-semibold leading-normal truncate">Mehmet Demir</p>
+<span class="material-symbols-outlined text-[16px] text-red-500 icon-filled">lock</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="text-xs font-medium px-2 py-0.5 rounded bg-gray-200 dark:bg-gray-700 text-gray-600 dark:text-gray-300">Öğrenci</span>
+<p class="text-gray-500 dark:text-gray-400 text-sm font-normal truncate">• 2022441100</p>
+</div>
+</div>
+<div class="shrink-0">
+<button class="text-red-400 hover:text-red-600 p-2 rounded-full hover:bg-red-100 dark:hover:bg-red-900/20 transition-colors">
+<span class="material-symbols-outlined text-[24px]">lock_open</span>
+</button>
+</div>
+</div>
+<!-- List Item: Faculty (Active) -->
+<div class="group flex items-center gap-4 px-4 py-3 cursor-pointer hover:bg-gray-50 dark:hover:bg-surface-dark/50 transition-colors border-b border-gray-100 dark:border-gray-800/50">
+<div class="relative">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full h-12 w-12" data-alt="Portrait of an older male professor" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBVHoiC1_V7YS_6vBcrCL2vHQNS-0j93CzJmo67hZb6wOMPFrzDdGQ2LEyTiuc-McPDmHbtt0jV7wmUxyqPfhqVFekwrm9bxK-OfRPrSZQuw-gZyzhRvuDycxJDE7sfgwXO2xmkjr4PJVDFNo1ikXVIkyv_Sn8nDlnv3quDdfIUBIK36-u-rNjatb0C0-9q0Gt3CyXFcOHPvj835u2x2xFV5IwN2kh8R13d3MOf9HGoSVY0LZpJVRjrSpd5NYzCtrTITeUzBAnAQpFv");'></div>
+<div class="absolute bottom-0 right-0 w-3 h-3 bg-green-500 rounded-full border-2 border-white dark:border-background-dark"></div>
+</div>
+<div class="flex flex-col justify-center flex-1 min-w-0">
+<p class="text-slate-900 dark:text-white text-base font-semibold leading-normal truncate">Prof. Dr. Canan Yücel</p>
+<div class="flex items-center gap-1.5">
+<span class="text-xs font-medium px-2 py-0.5 rounded bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300">Öğretim Elemanı</span>
+<p class="text-gray-500 dark:text-gray-400 text-sm font-normal truncate">• 19902233</p>
+</div>
+</div>
+<div class="shrink-0">
+<button class="text-gray-400 hover:text-primary p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+<span class="material-symbols-outlined text-[24px]">more_vert</span>
+</button>
+</div>
+</div>
+<!-- List Item: Student (Active) No Image -->
+<div class="group flex items-center gap-4 px-4 py-3 cursor-pointer hover:bg-gray-50 dark:hover:bg-surface-dark/50 transition-colors border-b border-gray-100 dark:border-gray-800/50">
+<div class="relative">
+<div class="flex items-center justify-center bg-orange-100 dark:bg-orange-900/40 text-orange-600 dark:text-orange-300 rounded-full h-12 w-12 text-lg font-bold">
+                        ZK
+                    </div>
+<div class="absolute bottom-0 right-0 w-3 h-3 bg-green-500 rounded-full border-2 border-white dark:border-background-dark"></div>
+</div>
+<div class="flex flex-col justify-center flex-1 min-w-0">
+<p class="text-slate-900 dark:text-white text-base font-semibold leading-normal truncate">Zeynep Kara</p>
+<div class="flex items-center gap-1.5">
+<span class="text-xs font-medium px-2 py-0.5 rounded bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300">Öğrenci</span>
+<p class="text-gray-500 dark:text-gray-400 text-sm font-normal truncate">• 2023101055</p>
+</div>
+</div>
+<div class="shrink-0">
+<button class="text-gray-400 hover:text-primary p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+<span class="material-symbols-outlined text-[24px]">more_vert</span>
+</button>
+</div>
+</div>
+<!-- Loading Spinner / Infinite Scroll Indicator -->
+<div class="flex justify-center p-6">
+<div class="h-6 w-6 rounded-full border-2 border-gray-200 dark:border-gray-700 border-t-primary animate-spin"></div>
+</div>
+</div>
+<!-- Floating Action Button (FAB) -->
+<div class="fixed bottom-6 right-6 z-30">
+<button class="group relative flex items-center justify-center gap-2 rounded-full bg-primary py-3.5 px-6 text-white shadow-xl shadow-primary/30 transition-all hover:bg-blue-600 hover:scale-[1.02] active:scale-95">
+<span class="material-symbols-outlined text-[24px]">person_add</span>
+<span class="text-base font-bold whitespace-nowrap">Yeni Kullanıcı</span>
+</button>
+</div>
+</div>
+</body></html>

@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="tr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Öğrenci Profili</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#2b7cee",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101822",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#1c2530",
+                        "border-light": "#e5e7eb",
+                        "border-dark": "#2d3748",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        /* Custom scrollbar hiding */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display min-h-screen relative pb-24 text-slate-900 dark:text-white antialiased">
+<!-- Top App Bar -->
+<div class="sticky top-0 z-50 bg-background-light/90 dark:bg-background-dark/90 backdrop-blur-md border-b border-border-light dark:border-border-dark px-4 py-3 flex items-center justify-between">
+<button class="flex items-center justify-center p-2 rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined text-slate-900 dark:text-white">arrow_back</span>
+</button>
+<h1 class="text-lg font-bold tracking-tight">Profilim</h1>
+<button class="flex items-center justify-center p-2 rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined text-slate-900 dark:text-white">more_vert</span>
+</button>
+</div>
+<main class="flex flex-col gap-6 p-4">
+<!-- Profile Card -->
+<div class="bg-primary rounded-2xl p-6 shadow-lg shadow-primary/20 relative overflow-hidden group">
+<!-- Decorative background elements -->
+<div class="absolute top-0 right-0 -mr-8 -mt-8 w-32 h-32 bg-white/10 rounded-full blur-2xl"></div>
+<div class="absolute bottom-0 left-0 -ml-8 -mb-8 w-24 h-24 bg-black/10 rounded-full blur-xl"></div>
+<div class="relative z-10 flex flex-col items-center gap-4">
+<div class="relative">
+<div class="w-24 h-24 rounded-full border-4 border-white/20 bg-cover bg-center shadow-md" data-alt="Portrait of a male student smiling" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCuDkg4qaDOJjr4ZoE6R4bZ6vC5as0prTGsqhUnrehvtmCsskQcZDxdxa15PZ5ZCbUukzSAXERZNyEGm4cJBBlVGBZ_hG94Ps4njo2PZqtm2kkts3RfJQ4pczSnetF16z1TJKEQvK7B5sajyVuemBzupiq-zVht2_jZqw9ugMY8bJhBMpzw2Tl_AnuGStPV-msLqjNNhEJoabqCrTs6d3XsvRSpoN81j5rQCd9yRdRd0J6A4MxbxeaA1sA-fGr80wcIPuwWEq9X-xe-');"></div>
+<button class="absolute bottom-0 right-0 bg-white dark:bg-surface-dark text-primary p-1.5 rounded-full shadow-sm border border-black/5 flex items-center justify-center hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+</div>
+<div class="text-center text-white">
+<h2 class="text-xl font-bold leading-tight">Ahmet Yılmaz</h2>
+<p class="text-white/80 text-sm mt-1 font-medium">Bilgisayar Mühendisliği</p>
+<p class="text-white/60 text-xs mt-0.5">2019123456</p>
+</div>
+<button class="mt-2 px-4 py-2 bg-white/20 hover:bg-white/30 text-white text-sm font-semibold rounded-lg backdrop-blur-sm transition-colors border border-white/10 w-full sm:w-auto">
+                    Profili Düzenle
+                </button>
+</div>
+</div>
+<!-- Stats Row -->
+<div class="grid grid-cols-3 gap-3">
+<div class="bg-surface-light dark:bg-surface-dark border border-border-light dark:border-border-dark rounded-xl p-3 flex flex-col items-center justify-center text-center shadow-sm">
+<span class="text-2xl font-bold text-primary">3.45</span>
+<span class="text-xs text-slate-500 dark:text-slate-400 mt-1 font-medium uppercase tracking-wider">GNO</span>
+</div>
+<div class="bg-surface-light dark:bg-surface-dark border border-border-light dark:border-border-dark rounded-xl p-3 flex flex-col items-center justify-center text-center shadow-sm">
+<span class="text-2xl font-bold text-slate-900 dark:text-white">3.</span>
+<span class="text-xs text-slate-500 dark:text-slate-400 mt-1 font-medium uppercase tracking-wider">Sınıf</span>
+</div>
+<div class="bg-surface-light dark:bg-surface-dark border border-border-light dark:border-border-dark rounded-xl p-3 flex flex-col items-center justify-center text-center shadow-sm">
+<span class="text-2xl font-bold text-slate-900 dark:text-white">24</span>
+<span class="text-xs text-slate-500 dark:text-slate-400 mt-1 font-medium uppercase tracking-wider">Kredi</span>
+</div>
+</div>
+<!-- Settings Groups -->
+<!-- Account Settings -->
+<div class="flex flex-col gap-2">
+<h3 class="text-sm font-bold text-slate-500 dark:text-slate-400 px-1 uppercase tracking-wider">Hesap Ayarları</h3>
+<div class="bg-surface-light dark:bg-surface-dark rounded-xl overflow-hidden border border-border-light dark:border-border-dark divide-y divide-border-light dark:divide-border-dark shadow-sm">
+<!-- Personal Info Item -->
+<button class="w-full flex items-center justify-between p-4 hover:bg-slate-50 dark:hover:bg-white/5 transition-colors group">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-lg bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">person</span>
+</div>
+<span class="text-sm font-medium text-slate-900 dark:text-white group-hover:text-primary transition-colors">Kişisel Bilgilerim</span>
+</div>
+<span class="material-symbols-outlined text-slate-400 text-[20px]">chevron_right</span>
+</button>
+<!-- Change Password Item -->
+<button class="w-full flex items-center justify-between p-4 hover:bg-slate-50 dark:hover:bg-white/5 transition-colors group">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-lg bg-orange-100 dark:bg-orange-900/30 text-orange-600 dark:text-orange-400 flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">lock</span>
+</div>
+<span class="text-sm font-medium text-slate-900 dark:text-white group-hover:text-primary transition-colors">Şifre Değiştir</span>
+</div>
+<span class="material-symbols-outlined text-slate-400 text-[20px]">chevron_right</span>
+</button>
+</div>
+</div>
+<!-- Preferences Settings -->
+<div class="flex flex-col gap-2">
+<h3 class="text-sm font-bold text-slate-500 dark:text-slate-400 px-1 uppercase tracking-wider">Tercihler</h3>
+<div class="bg-surface-light dark:bg-surface-dark rounded-xl overflow-hidden border border-border-light dark:border-border-dark divide-y divide-border-light dark:divide-border-dark shadow-sm">
+<!-- Notification Settings Item -->
+<button class="w-full flex items-center justify-between p-4 hover:bg-slate-50 dark:hover:bg-white/5 transition-colors group">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-lg bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400 flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">notifications</span>
+</div>
+<span class="text-sm font-medium text-slate-900 dark:text-white group-hover:text-primary transition-colors">Bildirim Ayarları</span>
+</div>
+<div class="flex items-center gap-2">
+<div class="w-2 h-2 rounded-full bg-red-500"></div>
+<span class="material-symbols-outlined text-slate-400 text-[20px]">chevron_right</span>
+</div>
+</button>
+<!-- Language Item -->
+<button class="w-full flex items-center justify-between p-4 hover:bg-slate-50 dark:hover:bg-white/5 transition-colors group">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-lg bg-emerald-100 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400 flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">language</span>
+</div>
+<span class="text-sm font-medium text-slate-900 dark:text-white group-hover:text-primary transition-colors">Dil Seçeneği</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-xs text-slate-500 dark:text-slate-400 font-medium">Türkçe</span>
+<span class="material-symbols-outlined text-slate-400 text-[20px]">chevron_right</span>
+</div>
+</button>
+<!-- Dark Mode Toggle Item -->
+<div class="w-full flex items-center justify-between p-4 hover:bg-slate-50 dark:hover:bg-white/5 transition-colors">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">dark_mode</span>
+</div>
+<span class="text-sm font-medium text-slate-900 dark:text-white">Karanlık Mod</span>
+</div>
+<div class="relative inline-block w-11 h-6 align-middle select-none transition duration-200 ease-in">
+<input class="toggle-checkbox absolute block w-5 h-5 rounded-full bg-white border-4 appearance-none cursor-pointer checked:right-0 checked:border-primary peer" id="toggle" name="toggle" type="checkbox"/>
+<label class="toggle-label block overflow-hidden h-6 rounded-full bg-slate-300 dark:bg-slate-700 cursor-pointer peer-checked:bg-primary" for="toggle"></label>
+</div>
+</div>
+</div>
+</div>
+<!-- Support Settings -->
+<div class="flex flex-col gap-2">
+<h3 class="text-sm font-bold text-slate-500 dark:text-slate-400 px-1 uppercase tracking-wider">Destek</h3>
+<div class="bg-surface-light dark:bg-surface-dark rounded-xl overflow-hidden border border-border-light dark:border-border-dark divide-y divide-border-light dark:divide-border-dark shadow-sm">
+<!-- Help Item -->
+<button class="w-full flex items-center justify-between p-4 hover:bg-slate-50 dark:hover:bg-white/5 transition-colors group">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-lg bg-cyan-100 dark:bg-cyan-900/30 text-cyan-600 dark:text-cyan-400 flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">help</span>
+</div>
+<span class="text-sm font-medium text-slate-900 dark:text-white group-hover:text-primary transition-colors">Yardım &amp; SSS</span>
+</div>
+<span class="material-symbols-outlined text-slate-400 text-[20px]">chevron_right</span>
+</button>
+</div>
+</div>
+<!-- Logout Button -->
+<button class="mt-2 w-full flex items-center justify-center gap-2 p-4 rounded-xl bg-red-50 dark:bg-red-900/10 text-red-600 dark:text-red-400 hover:bg-red-100 dark:hover:bg-red-900/20 transition-colors border border-red-100 dark:border-red-900/30 font-bold text-sm">
+<span class="material-symbols-outlined text-[20px]">logout</span>
+<span>Oturumu Kapat</span>
+</button>
+<p class="text-center text-xs text-slate-400 dark:text-slate-600 pt-4 pb-2">v2.1.0 • ÖBS Mobil</p>
+</main>
+<!-- Bottom Navigation -->
+<div class="fixed bottom-0 w-full bg-surface-light dark:bg-surface-dark border-t border-border-light dark:border-border-dark pb-safe">
+<div class="flex justify-around items-center h-16 max-w-lg mx-auto px-2">
+<button class="flex flex-col items-center justify-center w-full h-full space-y-1 text-slate-400 dark:text-slate-500 hover:text-primary dark:hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[24px]">home</span>
+<span class="text-[10px] font-medium">Ana Sayfa</span>
+</button>
+<button class="flex flex-col items-center justify-center w-full h-full space-y-1 text-slate-400 dark:text-slate-500 hover:text-primary dark:hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[24px]">school</span>
+<span class="text-[10px] font-medium">Dersler</span>
+</button>
+<div class="relative w-full h-full group">
+<button class="absolute -top-6 left-1/2 -translate-x-1/2 w-14 h-14 bg-primary text-white rounded-full shadow-lg shadow-primary/40 flex items-center justify-center transform group-hover:scale-105 transition-all">
+<span class="material-symbols-outlined text-[28px]">qr_code_scanner</span>
+</button>
+</div>
+<button class="flex flex-col items-center justify-center w-full h-full space-y-1 text-slate-400 dark:text-slate-500 hover:text-primary dark:hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[24px]">grade</span>
+<span class="text-[10px] font-medium">Notlar</span>
+</button>
+<button class="flex flex-col items-center justify-center w-full h-full space-y-1 text-primary">
+<span class="material-symbols-outlined text-[24px] fill-current">person</span>
+<span class="text-[10px] font-bold">Profil</span>
+</button>
+</div>
+</div>
+<style>
+        /* Custom styles for toggle switch */
+        .toggle-checkbox:checked {
+            right: 0;
+            border-color: #2b7cee; /* primary color */
+        }
+        .toggle-checkbox:checked + .toggle-label {
+            background-color: #2b7cee; /* primary color */
+        }
+        /* Safe area handling for iPhone X+ */
+        .pb-safe {
+            padding-bottom: env(safe-area-inset-bottom);
+        }
+    </style>
+</body></html>

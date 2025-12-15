@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="tr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sistem Ayarları - Yönetici</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Icons -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration -->
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#2b7cee",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101822",
+                        "surface-dark": "#1C232E", // Slightly lighter than bg-dark for lists
+                        "text-secondary": "#9da8b9",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom Scrollbar for hidden overflow utility if needed */
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        /* Custom Switch Style to match iOS feel */
+        .toggle-checkbox:checked {
+            right: 0;
+            border-color: #2b7cee;
+        }
+        .toggle-checkbox:checked + .toggle-label {
+            background-color: #2b7cee;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display antialiased min-h-screen flex flex-col overflow-x-hidden">
+<!-- Top App Bar -->
+<header class="sticky top-0 z-50 flex items-center justify-between bg-background-light dark:bg-background-dark p-4 border-b border-gray-200 dark:border-gray-800">
+<button class="text-gray-900 dark:text-white flex size-10 shrink-0 items-center justify-center rounded-full active:bg-gray-200 dark:active:bg-gray-800 transition-colors">
+<span class="material-symbols-outlined">arrow_back_ios_new</span>
+</button>
+<h2 class="text-gray-900 dark:text-white text-lg font-bold leading-tight flex-1 text-center pr-2">Sistem Ayarları</h2>
+<button class="flex items-center justify-end px-2">
+<span class="text-primary text-base font-semibold">Kaydet</span>
+</button>
+</header>
+<!-- Main Content -->
+<main class="flex-1 flex flex-col p-4 gap-6 max-w-md mx-auto w-full">
+<!-- Segmented Control -->
+<div class="flex h-10 w-full items-center justify-center rounded-lg bg-gray-200 dark:bg-[#282f39] p-1">
+<label class="flex cursor-pointer h-full flex-1 items-center justify-center overflow-hidden rounded-[6px] transition-all has-[:checked]:bg-white dark:has-[:checked]:bg-background-dark has-[:checked]:shadow-sm">
+<span class="truncate text-gray-700 dark:text-white text-sm font-medium">Genel Ayarlar</span>
+<input checked="" class="hidden" name="settings-tab" type="radio"/>
+</label>
+<label class="flex cursor-pointer h-full flex-1 items-center justify-center overflow-hidden rounded-[6px] transition-all has-[:checked]:bg-white dark:has-[:checked]:bg-background-dark has-[:checked]:shadow-sm">
+<span class="truncate text-gray-500 dark:text-text-secondary text-sm font-medium hover:text-gray-700 dark:hover:text-white">Bildirim Politikaları</span>
+<input class="hidden" name="settings-tab" type="radio"/>
+</label>
+</div>
+<!-- Section: Akademik Dönem -->
+<section class="flex flex-col gap-2">
+<h3 class="text-gray-500 dark:text-text-secondary text-xs uppercase tracking-wider font-semibold ml-4">Akademik Dönem &amp; Kayıt</h3>
+<div class="flex flex-col overflow-hidden rounded-xl bg-white dark:bg-surface-dark shadow-sm border border-gray-100 dark:border-gray-800 divide-y divide-gray-100 dark:divide-gray-800">
+<!-- Active Term -->
+<div class="flex items-center justify-between p-4 active:bg-gray-50 dark:active:bg-gray-800/50 cursor-pointer transition-colors group">
+<div class="flex flex-col">
+<span class="text-gray-900 dark:text-white text-base font-medium">Aktif Dönem</span>
+<span class="text-primary text-sm font-normal">2023-2024 Güz Dönemi</span>
+</div>
+<span class="material-symbols-outlined text-gray-400 group-hover:text-primary transition-colors text-[20px]">edit_calendar</span>
+</div>
+<!-- Registration Period Toggle -->
+<div class="flex items-center justify-between p-4">
+<div class="flex flex-col">
+<span class="text-gray-900 dark:text-white text-base font-medium">Ders Kayıt Dönemi</span>
+<span class="text-gray-500 dark:text-text-secondary text-xs">Öğrenci erişimine aç/kapat</span>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox" value=""/>
+<div class="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-primary"></div>
+</label>
+</div>
+</div>
+</section>
+<!-- Section: Yapılandırma -->
+<section class="flex flex-col gap-2">
+<h3 class="text-gray-500 dark:text-text-secondary text-xs uppercase tracking-wider font-semibold ml-4">Yapılandırma</h3>
+<div class="flex flex-col overflow-hidden rounded-xl bg-white dark:bg-surface-dark shadow-sm border border-gray-100 dark:border-gray-800 divide-y divide-gray-100 dark:divide-gray-800">
+<!-- Faculty/Dept List -->
+<button class="flex items-center justify-between p-4 w-full text-left active:bg-gray-50 dark:active:bg-gray-800/50 transition-colors">
+<div class="flex items-center gap-3">
+<div class="flex items-center justify-center size-8 rounded-lg bg-blue-500/10 text-primary">
+<span class="material-symbols-outlined text-[20px]">domain</span>
+</div>
+<span class="text-gray-900 dark:text-white text-base font-medium">Bölüm ve Fakülte Listesi</span>
+</div>
+<span class="material-symbols-outlined text-gray-400 text-[20px]">chevron_right</span>
+</button>
+<!-- Course Catalog -->
+<button class="flex items-center justify-between p-4 w-full text-left active:bg-gray-50 dark:active:bg-gray-800/50 transition-colors">
+<div class="flex items-center gap-3">
+<div class="flex items-center justify-center size-8 rounded-lg bg-purple-500/10 text-purple-400">
+<span class="material-symbols-outlined text-[20px]">library_books</span>
+</div>
+<span class="text-gray-900 dark:text-white text-base font-medium">Ders Kataloğu</span>
+</div>
+<span class="material-symbols-outlined text-gray-400 text-[20px]">chevron_right</span>
+</button>
+</div>
+</section>
+<!-- Section: Bildirim Kuralları (Example of mixed content) -->
+<section class="flex flex-col gap-2">
+<h3 class="text-gray-500 dark:text-text-secondary text-xs uppercase tracking-wider font-semibold ml-4">Otomasyon Kuralları</h3>
+<div class="flex flex-col overflow-hidden rounded-xl bg-white dark:bg-surface-dark shadow-sm border border-gray-100 dark:border-gray-800 p-4 gap-4">
+<!-- Slider for Absence Threshold -->
+<div class="flex flex-col gap-3">
+<div class="flex justify-between items-center">
+<span class="text-gray-900 dark:text-white text-sm font-medium">Kritik Devamsızlık Eşiği</span>
+<span class="text-primary font-bold text-sm">%15</span>
+</div>
+<div class="relative w-full h-1 bg-gray-200 rounded-lg cursor-pointer dark:bg-gray-700">
+<!-- Track filled -->
+<div class="absolute h-full bg-primary rounded-lg" style="width: 15%"></div>
+<!-- Thumb -->
+<div class="absolute size-4 bg-white rounded-full shadow border border-gray-200 -mt-1.5 ml-[-8px] cursor-pointer" style="left: 15%"></div>
+</div>
+<p class="text-gray-500 dark:text-text-secondary text-xs">Bu orana ulaşan öğrencilere otomatik uyarı gönderilir.</p>
+</div>
+<div class="h-px bg-gray-100 dark:bg-gray-800 w-full"></div>
+<!-- Not Girişi Süresi -->
+<div class="flex flex-col gap-2">
+<span class="text-gray-900 dark:text-white text-sm font-medium">Sınav Notu Giriş Süresi</span>
+<div class="flex items-center gap-3">
+<button class="size-8 rounded-lg bg-gray-100 dark:bg-gray-700 flex items-center justify-center text-gray-500 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors">
+<span class="material-symbols-outlined text-[18px]">remove</span>
+</button>
+<span class="text-gray-900 dark:text-white font-semibold">7 Gün</span>
+<button class="size-8 rounded-lg bg-gray-100 dark:bg-gray-700 flex items-center justify-center text-gray-500 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors">
+<span class="material-symbols-outlined text-[18px]">add</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Section: İletişim Kanalları -->
+<section class="flex flex-col gap-2 pb-8">
+<h3 class="text-gray-500 dark:text-text-secondary text-xs uppercase tracking-wider font-semibold ml-4">İletişim Kanalları</h3>
+<div class="flex flex-col overflow-hidden rounded-xl bg-white dark:bg-surface-dark shadow-sm border border-gray-100 dark:border-gray-800 divide-y divide-gray-100 dark:divide-gray-800">
+<div class="flex items-center justify-between p-4">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-gray-400">notifications_active</span>
+<span class="text-gray-900 dark:text-white text-sm font-medium">Anlık Bildirimler (Push)</span>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox" value=""/>
+<div class="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-primary"></div>
+</label>
+</div>
+<div class="flex items-center justify-between p-4">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-gray-400">mail</span>
+<span class="text-gray-900 dark:text-white text-sm font-medium">E-posta Bültenleri</span>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox" value=""/>
+<div class="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-primary"></div>
+</label>
+</div>
+<div class="flex items-center justify-between p-4">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-gray-400">sms</span>
+<span class="text-gray-900 dark:text-white text-sm font-medium">SMS Bildirimleri</span>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input class="sr-only peer" type="checkbox" value=""/>
+<div class="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-primary"></div>
+</label>
+</div>
+</div>
+</section>
+</main>
+</body></html>

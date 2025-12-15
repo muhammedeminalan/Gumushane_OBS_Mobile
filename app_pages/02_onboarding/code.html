@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="tr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ÖBS Onboarding</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Noto+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#2b7cee",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101822",
+                        "surface-dark": "#1a2430",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "Noto Sans", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        /* Hide scrollbar for smooth carousel feel */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        
+        /* Snap scrolling behavior */
+        .snap-x {
+            scroll-snap-type: x mandatory;
+        }
+        .snap-center {
+            scroll-snap-align: center;
+        }
+        
+        body {
+            font-family: 'Inter', "Noto Sans", sans-serif;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white overflow-hidden h-screen flex flex-col justify-between">
+<!-- Top Navigation / Status Area -->
+<div class="flex items-center justify-between px-6 py-4 pt-8 w-full z-20 absolute top-0 left-0">
+<!-- Status Bar Placeholder (Visual only) -->
+<div class="absolute top-2 left-6 right-6 flex justify-between text-[10px] font-medium opacity-70">
+<span>9:41</span>
+<div class="flex gap-1 items-center">
+<span class="material-symbols-outlined text-[14px]">signal_cellular_alt</span>
+<span class="material-symbols-outlined text-[14px]">wifi</span>
+<span class="material-symbols-outlined text-[14px]">battery_full</span>
+</div>
+</div>
+<div class="w-full flex justify-end mt-4">
+<button class="flex items-center justify-center h-10 px-2 bg-transparent text-slate-500 dark:text-slate-400 text-sm font-bold leading-normal tracking-wide hover:text-primary dark:hover:text-primary transition-colors">
+<span class="truncate">Atla</span>
+</button>
+</div>
+</div>
+<!-- Main Carousel Container -->
+<div class="flex-1 w-full flex overflow-x-auto snap-x snap-mandatory no-scrollbar relative z-10 scroll-smooth" id="carousel">
+<!-- Slide 1: Grades -->
+<div class="min-w-full w-full h-full flex flex-col items-center justify-center snap-center px-6 pt-12 pb-24">
+<div class="w-full max-w-sm aspect-square relative mb-8 flex items-center justify-center">
+<!-- Abstract Decorative Background Blob -->
+<div class="absolute inset-0 bg-primary/20 rounded-full blur-3xl opacity-50 transform scale-75"></div>
+<div class="w-full h-full rounded-2xl overflow-hidden relative shadow-2xl bg-surface-dark/50 backdrop-blur-sm border border-white/5">
+<div class="absolute inset-0 bg-center bg-cover" data-alt="Digital illustration of a grade report card with A+ grade highlighted on a dark modern interface" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD29lmH3mR96vVvBSSllBWrDVlS-sj_05Gl6KC7UUu6UKtYTRnxMqbbZr04KXHRM_utPssn0er2uI4_GFllAxlzGKl3N-08aR_z9ZaoZhSfvEKVps8uuzaqHNbKJbnVMZKa-R83-GAHMDvlOTei3mIWkSIz4HMBF6n8DCjABR9EPO4e6NyQ-zYGjyt0wW6d7jF-9x59q3-sswI4gkJgkOUWhocprwi4jhc36usHvMXXROYHD4kWYizz-TBbELe6rn-vDg6QzoYlJKap"); opacity: 0.8;'>
+</div>
+<!-- Overlay Gradient -->
+<div class="absolute inset-0 bg-gradient-to-t from-background-dark via-transparent to-transparent"></div>
+<!-- Floating Icon Overlay -->
+<div class="absolute bottom-6 left-6 right-6 p-4 bg-background-dark/80 backdrop-blur-md rounded-xl border border-white/10 flex items-center gap-4">
+<div class="h-12 w-12 rounded-full bg-primary flex items-center justify-center text-white shadow-lg shadow-primary/30">
+<span class="material-symbols-outlined text-2xl">school</span>
+</div>
+<div class="flex-1">
+<div class="h-2 w-24 bg-white/20 rounded mb-2"></div>
+<div class="h-2 w-16 bg-white/10 rounded"></div>
+</div>
+<div class="text-xl font-bold text-primary">A+</div>
+</div>
+</div>
+</div>
+<h1 class="text-slate-900 dark:text-white tracking-tight text-3xl font-bold leading-tight text-center mb-4">Hızlı Not Erişimi</h1>
+<p class="text-slate-600 dark:text-slate-400 text-base font-normal leading-relaxed text-center max-w-xs">
+                Sınav sonuçlarınıza anında ulaşın ve ortalamanızı grafiklerle takip edin.
+            </p>
+</div>
+<!-- Slide 2: Schedule & Attendance -->
+<div class="min-w-full w-full h-full flex flex-col items-center justify-center snap-center px-6 pt-12 pb-24">
+<div class="w-full max-w-sm aspect-square relative mb-8 flex items-center justify-center">
+<div class="absolute inset-0 bg-purple-500/20 rounded-full blur-3xl opacity-50 transform scale-75 translate-x-4"></div>
+<div class="w-full h-full rounded-2xl overflow-hidden relative shadow-2xl bg-surface-dark/50 backdrop-blur-sm border border-white/5">
+<div class="absolute inset-0 bg-center bg-cover" data-alt="Abstract 3d calendar illustration floating in dark space with glowing events" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCg-xmjextzVQHP6_ZdXNyYYNuauTyyN1f35ya0CUsl8Ru1aD3dyQ0glv7QwPXzB5S276sN2IoSifcp1FQ6HB3giKMdcz5cWyoj1VCnf9rsm5IcHia9THXwx21fPMAZgGt_uFvk4b43uNSQj2s9EugnqKVDzKhQhPnhjDKUQxQOjKU4-00wUV9ydr8_tKQxZeHbyV-U8vRU0TqOkB2UE6p1q4yZmgr5O2h7VFRbD-SBvyiT1bDo9Hr-EVqKoaW5VqQiEq6JBy5xW2MW"); opacity: 0.8;'>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-background-dark via-transparent to-transparent"></div>
+<div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-48 bg-background-dark/90 backdrop-blur-md rounded-xl border border-white/10 p-4 shadow-xl">
+<div class="flex items-center justify-between mb-3 border-b border-white/10 pb-2">
+<span class="text-xs text-slate-400">Bugün</span>
+<span class="material-symbols-outlined text-sm text-primary">calendar_month</span>
+</div>
+<div class="space-y-2">
+<div class="flex items-center gap-2">
+<div class="w-1 h-8 rounded-full bg-primary"></div>
+<div>
+<div class="text-sm font-semibold text-white">Veri Yapıları</div>
+<div class="text-[10px] text-slate-400">10:30 - D102</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<h1 class="text-slate-900 dark:text-white tracking-tight text-3xl font-bold leading-tight text-center mb-4">Ders Programı &amp; Devamsızlık</h1>
+<p class="text-slate-600 dark:text-slate-400 text-base font-normal leading-relaxed text-center max-w-xs">
+                Haftalık programınızı düzenleyin ve devamsızlık hakkınızı tek ekranda görün.
+            </p>
+</div>
+<!-- Slide 3: Notifications -->
+<div class="min-w-full w-full h-full flex flex-col items-center justify-center snap-center px-6 pt-12 pb-24">
+<div class="w-full max-w-sm aspect-square relative mb-8 flex items-center justify-center">
+<div class="absolute inset-0 bg-emerald-500/20 rounded-full blur-3xl opacity-50 transform scale-75 -translate-y-4"></div>
+<div class="w-full h-full rounded-2xl overflow-hidden relative shadow-2xl bg-surface-dark/50 backdrop-blur-sm border border-white/5">
+<div class="absolute inset-0 bg-center bg-cover" data-alt="Digital notification bell icon with glowing particles on dark background" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDhIdDx06_nYNLGXNvYlSB7tv89ls5sam401LQ6kcp2bUBhp8F8bCNiSJ081y5R6pr8lWHdM8NGDJdZANU1gnGkMOUsDsPU_1WeNAocT_dl_lAxUDWjsksOLJ2sWVKkMaaWlkNNeyDNOqsLDZ5lexftTogeAyaBzJHy6GJvayZvhKBmcykRQy9h2HkYvekaedrQOKrWIvdcMZ5jw4PEul6VNT5YX-_QEeW35qLqm47d1keNlYpWLL0doGG1FIiDf8baiulZH1MYi8o2"); opacity: 0.7;'>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-background-dark via-transparent to-transparent"></div>
+<!-- Notification Cards Stack -->
+<div class="absolute bottom-12 left-8 right-8 flex flex-col gap-2">
+<div class="bg-background-dark/95 backdrop-blur rounded-lg p-3 border border-white/10 shadow-lg transform scale-95 opacity-60 translate-y-2">
+<div class="h-2 w-1/3 bg-white/20 rounded mb-1"></div>
+</div>
+<div class="bg-background-dark/95 backdrop-blur rounded-lg p-3 border border-white/10 shadow-lg transform scale-98 opacity-80 translate-y-1">
+<div class="flex gap-3">
+<div class="h-8 w-8 rounded-full bg-red-500/20 flex items-center justify-center text-red-500">
+<span class="material-symbols-outlined text-sm">warning</span>
+</div>
+<div class="flex-1">
+<div class="h-2 w-24 bg-white/30 rounded mb-1"></div>
+<div class="h-2 w-full bg-white/10 rounded"></div>
+</div>
+</div>
+</div>
+<div class="bg-background-dark/95 backdrop-blur rounded-lg p-4 border border-l-4 border-l-primary border-t border-r border-b border-white/10 shadow-xl">
+<div class="flex gap-3 items-start">
+<div class="h-8 w-8 rounded-full bg-primary/20 flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-sm">notifications_active</span>
+</div>
+<div>
+<h4 class="text-sm font-semibold text-white mb-1">Ders İptali</h4>
+<p class="text-xs text-slate-400">Matematik 101 dersi bugün yapılmayacaktır.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<h1 class="text-slate-900 dark:text-white tracking-tight text-3xl font-bold leading-tight text-center mb-4">Anlık Bildirimler</h1>
+<p class="text-slate-600 dark:text-slate-400 text-base font-normal leading-relaxed text-center max-w-xs">
+                Duyurular ve ders iptalleri cebinize gelsin. Hiçbir şeyi kaçırmayın.
+            </p>
+</div>
+</div>
+<!-- Bottom Controls -->
+<div class="absolute bottom-0 w-full px-6 pb-10 bg-gradient-to-t from-background-light dark:from-background-dark via-background-light dark:via-background-dark to-transparent pt-12 z-20">
+<div class="flex flex-col items-center gap-8">
+<!-- Page Indicators -->
+<div class="flex flex-row items-center justify-center gap-2">
+<div class="h-2 w-8 rounded-full bg-primary transition-all duration-300"></div>
+<div class="h-2 w-2 rounded-full bg-slate-300 dark:bg-slate-700 transition-all duration-300"></div>
+<div class="h-2 w-2 rounded-full bg-slate-300 dark:bg-slate-700 transition-all duration-300"></div>
+</div>
+<!-- Action Button -->
+<button class="w-full flex items-center justify-center rounded-xl h-14 px-4 bg-primary text-white text-base font-bold leading-normal tracking-[0.015em] hover:bg-primary/90 active:scale-95 transition-all shadow-lg shadow-primary/25">
+<span class="truncate">Devam Et</span>
+<span class="material-symbols-outlined ml-2 text-[20px]">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Script to handle simple "interactivity" simulation (changing dots/button text on scroll for demo purposes) -->
+<!-- Note: In a real React/JS app, this would be handled by state. Here we use inline JS strictly for the prototype feel if allowed, or purely static. -->
+<!-- Since "DO NOT add any JavaScript or React code" usually implies logic files, but simple inline handlers for demoing a carousel state might be acceptable. However, to strictly adhere to "No JS Code" rules for logic, I will leave the HTML clean. The user will perceive the first slide state. -->
+</body></html>

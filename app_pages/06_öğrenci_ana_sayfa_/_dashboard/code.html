@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="tr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Öğrenci Paneli</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Config -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#2b7cee",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101822",
+                        "card-dark": "#1c242f",
+                        "card-light": "#ffffff",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem", 
+                        "lg": "0.75rem", 
+                        "xl": "1rem", 
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom scrollbar hide for clean horizontal scroll */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        
+        /* Conic gradient utility for the chart */
+        .conic-gradient-attendance {
+            background: conic-gradient(var(--tw-gradient-stops));
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-white antialiased transition-colors duration-200">
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden pb-20">
+<!-- Header Section -->
+<header class="sticky top-0 z-50 flex items-center justify-between bg-background-light/90 dark:bg-background-dark/90 px-5 py-4 backdrop-blur-md">
+<div class="flex items-center gap-3">
+<div class="relative">
+<div class="h-10 w-10 rounded-full bg-cover bg-center ring-2 ring-primary/20" data-alt="Portrait of student smiling" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCqHnBDlse71fv4FONFAB28QEBWtdlymZaujBfllImLepLM9bHnJqhwHrBgq611-AUe4YAxH02A-zNRX7XpC3IL1iE-Ny4f5D3Y1jObd8kN98F92Lo0cW7ihnMUQA_RPd978Xp2rwPNGGR0yLI4NZIe1uDtqgGwi-kt8KaabLrWAExAqjXOL33tij-ZPvgq58TnLT-Ct0BVBppYDKV1uk46XkgBDpV0WmtaRiT-sl-XhYafn9c5dDLHurUXeVMqNhcM1kjIfebrMNZr");'>
+</div>
+<span class="absolute bottom-0 right-0 h-3 w-3 rounded-full bg-green-500 ring-2 ring-white dark:ring-background-dark"></span>
+</div>
+<div>
+<p class="text-xs font-medium text-slate-500 dark:text-slate-400">Tekrar Merhaba,</p>
+<h2 class="text-sm font-bold leading-tight text-slate-900 dark:text-white">Ahmet Yılmaz</h2>
+</div>
+</div>
+<button class="relative flex h-10 w-10 items-center justify-center rounded-full bg-white dark:bg-card-dark text-slate-600 dark:text-slate-300 shadow-sm transition-transform active:scale-95">
+<span class="material-symbols-outlined text-[24px]">notifications</span>
+<span class="absolute top-2 right-2.5 h-2 w-2 rounded-full bg-red-500 ring-2 ring-white dark:ring-card-dark"></span>
+</button>
+</header>
+<!-- Main Content -->
+<main class="flex flex-col gap-6 px-5 pt-2">
+<!-- Quick Stats / Attendance -->
+<section class="grid grid-cols-1 gap-4">
+<div class="relative overflow-hidden rounded-xl bg-primary text-white shadow-lg shadow-primary/20">
+<div class="absolute -right-10 -top-10 h-40 w-40 rounded-full bg-white/10 blur-2xl"></div>
+<div class="absolute -left-10 -bottom-10 h-32 w-32 rounded-full bg-black/10 blur-xl"></div>
+<div class="relative flex items-center justify-between p-5">
+<div class="flex flex-col gap-1">
+<span class="text-xs font-medium text-blue-100">Genel Devamsızlık</span>
+<div class="flex items-baseline gap-1">
+<span class="text-3xl font-bold">%12</span>
+<span class="text-xs text-blue-100">kullanıldı</span>
+</div>
+<div class="mt-2 inline-flex items-center gap-1 rounded-full bg-white/20 px-2.5 py-0.5 w-fit">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+<span class="text-xs font-medium">Durum: Güvenli</span>
+</div>
+</div>
+<!-- Circular Progress Indicator -->
+<div class="relative flex h-20 w-20 items-center justify-center rounded-full bg-white/10 p-1">
+<!-- Conic gradient track -->
+<div class="absolute inset-0 rounded-full conic-gradient-attendance" style="--tw-gradient-stops: #fff 12%, rgba(255,255,255,0.2) 12%"></div>
+<!-- Inner hole -->
+<div class="relative flex h-16 w-16 items-center justify-center rounded-full bg-primary">
+<span class="material-symbols-outlined text-3xl text-white">pie_chart</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Quick Actions Grid -->
+<section class="grid grid-cols-2 gap-3">
+<button class="group flex flex-col items-start gap-3 rounded-xl bg-card-light dark:bg-card-dark p-4 shadow-sm transition-all active:scale-95">
+<div class="flex h-10 w-10 items-center justify-center rounded-lg bg-blue-100 text-blue-600 dark:bg-blue-900/30 dark:text-blue-400">
+<span class="material-symbols-outlined">school</span>
+</div>
+<div class="text-left">
+<span class="block text-sm font-bold text-slate-900 dark:text-white">Notlar</span>
+<span class="text-xs text-slate-500 dark:text-slate-400">Dönem notları</span>
+</div>
+</button>
+<button class="group flex flex-col items-start gap-3 rounded-xl bg-card-light dark:bg-card-dark p-4 shadow-sm transition-all active:scale-95">
+<div class="flex h-10 w-10 items-center justify-center rounded-lg bg-orange-100 text-orange-600 dark:bg-orange-900/30 dark:text-orange-400">
+<span class="material-symbols-outlined">event_busy</span>
+</div>
+<div class="text-left">
+<span class="block text-sm font-bold text-slate-900 dark:text-white">Devamsızlık</span>
+<span class="text-xs text-slate-500 dark:text-slate-400">Detaylı rapor</span>
+</div>
+</button>
+<button class="group flex flex-col items-start gap-3 rounded-xl bg-card-light dark:bg-card-dark p-4 shadow-sm transition-all active:scale-95">
+<div class="flex h-10 w-10 items-center justify-center rounded-lg bg-purple-100 text-purple-600 dark:bg-purple-900/30 dark:text-purple-400">
+<span class="material-symbols-outlined">calendar_month</span>
+</div>
+<div class="text-left">
+<span class="block text-sm font-bold text-slate-900 dark:text-white">Program</span>
+<span class="text-xs text-slate-500 dark:text-slate-400">Haftalık dersler</span>
+</div>
+</button>
+<button class="group flex flex-col items-start gap-3 rounded-xl bg-card-light dark:bg-card-dark p-4 shadow-sm transition-all active:scale-95">
+<div class="relative flex h-10 w-10 items-center justify-center rounded-lg bg-emerald-100 text-emerald-600 dark:bg-emerald-900/30 dark:text-emerald-400">
+<span class="material-symbols-outlined">campaign</span>
+<span class="absolute top-2 right-2 h-2 w-2 rounded-full bg-red-500 ring-2 ring-emerald-100 dark:ring-[#132d25]"></span>
+</div>
+<div class="text-left">
+<span class="block text-sm font-bold text-slate-900 dark:text-white">Duyurular</span>
+<span class="text-xs text-slate-500 dark:text-slate-400">3 yeni duyuru</span>
+</div>
+</button>
+</section>
+<!-- Latest Grade Card -->
+<section>
+<div class="flex items-center justify-between px-1 mb-3">
+<h3 class="text-base font-bold text-slate-900 dark:text-white">Son Açıklanan Not</h3>
+</div>
+<div class="relative overflow-hidden rounded-xl bg-card-light dark:bg-card-dark p-0 shadow-sm">
+<div class="flex items-stretch">
+<div class="flex flex-1 flex-col justify-center gap-3 p-5">
+<div>
+<div class="mb-1 flex items-center gap-2">
+<span class="inline-flex items-center rounded bg-slate-100 dark:bg-slate-800 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-slate-600 dark:text-slate-400">FİNAL</span>
+<span class="text-xs text-slate-400">14 Ocak 2024</span>
+</div>
+<h4 class="text-lg font-bold leading-tight text-slate-900 dark:text-white">MAT101 - Matematik I</h4>
+<p class="text-sm text-slate-500 dark:text-slate-400">Prof. Dr. Mehmet Demir</p>
+</div>
+<div class="flex items-center gap-4">
+<div class="flex flex-col">
+<span class="text-xs font-medium text-slate-500 dark:text-slate-400">Not</span>
+<span class="text-2xl font-bold text-primary">85</span>
+</div>
+<div class="h-8 w-px bg-slate-200 dark:bg-slate-700"></div>
+<div class="flex flex-col">
+<span class="text-xs font-medium text-slate-500 dark:text-slate-400">Harf</span>
+<span class="text-2xl font-bold text-emerald-500">BA</span>
+</div>
+</div>
+</div>
+<div class="w-24 bg-cover bg-center" data-alt="Abstract geometric shapes representing mathematics" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDEREyz8N6vmTO6_4xT77XyowKZBtksRTsO_SN2q_-14VXa2kMl4K_xAn7SzhoBHbnXdEzktNlwFOUXUDQRMyZBIVw-8l1ol0eFRAq6GTmkoV_zc3fCIatHEbEzJz9HQoE-Uc5mT1rdnXNISsSQjQWrOfTuJE-Ru4q4maP_4Ac-_CGBll8imSmhGUUCXa4mW6n9sZanoqXttlp3ntXM2lCfWLU0cG5W_nBlVyQbhfAuyDk0qiiV49H4Sz3IJi9yvMPW-2wdD6JoxBin");'>
+</div>
+</div>
+<div class="border-t border-slate-100 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-800/30 p-2">
+<button class="flex w-full items-center justify-center gap-2 rounded-lg py-2 text-sm font-medium text-primary hover:bg-primary/5 dark:hover:bg-primary/10 transition-colors">
+<span>Tüm Notları Gör</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Today's Schedule -->
+<section>
+<div class="flex items-center justify-between px-1 mb-3">
+<h3 class="text-base font-bold text-slate-900 dark:text-white">Bugünkü Program</h3>
+<span class="text-xs font-medium text-slate-500 dark:text-slate-400">2 Ders</span>
+</div>
+<div class="flex flex-col gap-3">
+<!-- Class Item 1 -->
+<div class="flex items-center gap-4 rounded-xl bg-card-light dark:bg-card-dark p-4 shadow-sm border-l-4 border-primary">
+<div class="flex flex-col items-center min-w-[50px]">
+<span class="text-sm font-bold text-slate-900 dark:text-white">09:00</span>
+<span class="text-xs text-slate-500 dark:text-slate-400">10:50</span>
+</div>
+<div class="h-10 w-px bg-slate-200 dark:bg-slate-700"></div>
+<div class="flex flex-col flex-1">
+<span class="text-sm font-bold text-slate-900 dark:text-white">Fizik 101</span>
+<div class="flex items-center gap-1 text-xs text-slate-500 dark:text-slate-400">
+<span class="material-symbols-outlined text-[14px]">location_on</span>
+<span>Derslik B-202</span>
+</div>
+</div>
+<div class="rounded-full bg-green-100 px-2 py-1 text-[10px] font-bold text-green-700 dark:bg-green-900/30 dark:text-green-400">
+                            YAPILDI
+                        </div>
+</div>
+<!-- Class Item 2 -->
+<div class="flex items-center gap-4 rounded-xl bg-card-light dark:bg-card-dark p-4 shadow-sm border-l-4 border-orange-400">
+<div class="flex flex-col items-center min-w-[50px]">
+<span class="text-sm font-bold text-slate-900 dark:text-white">13:00</span>
+<span class="text-xs text-slate-500 dark:text-slate-400">14:50</span>
+</div>
+<div class="h-10 w-px bg-slate-200 dark:bg-slate-700"></div>
+<div class="flex flex-col flex-1">
+<span class="text-sm font-bold text-slate-900 dark:text-white">Veri Yapıları</span>
+<div class="flex items-center gap-1 text-xs text-slate-500 dark:text-slate-400">
+<span class="material-symbols-outlined text-[14px]">science</span>
+<span>Lab A</span>
+</div>
+</div>
+<div class="rounded-full bg-slate-100 px-2 py-1 text-[10px] font-bold text-slate-600 dark:bg-slate-700 dark:text-slate-300">
+                            BEKLİYOR
+                        </div>
+</div>
+</div>
+</section>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 left-0 right-0 z-50 border-t border-slate-200 bg-white/95 pb-safe pt-2 dark:border-slate-800 dark:bg-[#101822]/95 backdrop-blur-lg">
+<div class="flex justify-around items-center px-2 pb-2">
+<a class="flex flex-col items-center gap-1 p-2 text-primary" href="#">
+<span class="material-symbols-outlined filled">home</span>
+<span class="text-[10px] font-medium">Ana Sayfa</span>
+</a>
+<a class="flex flex-col items-center gap-1 p-2 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 transition-colors" href="#">
+<span class="material-symbols-outlined">calendar_today</span>
+<span class="text-[10px] font-medium">Takvim</span>
+</a>
+<!-- Floating FAB for Quick Add/Action if needed, or just a highlighted center item -->
+<a class="flex flex-col items-center gap-1 p-2 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 transition-colors" href="#">
+<span class="material-symbols-outlined">school</span>
+<span class="text-[10px] font-medium">Dersler</span>
+</a>
+<a class="flex flex-col items-center gap-1 p-2 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 transition-colors" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="text-[10px] font-medium">Profil</span>
+</a>
+</div>
+<!-- iOS Home Indicator Spacing -->
+<div class="h-5 w-full"></div>
+</nav>
+</div>
+</body></html>

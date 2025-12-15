@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="tr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Denetim Logları + Yasal - Yönetici</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Icons -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#2b7cee",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101822",
+                        "surface-dark": "#1A222C",
+                        "surface-light": "#FFFFFF",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom scrollbar for better mobile feel if needed, though native is usually fine */
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-display bg-background-light dark:bg-background-dark min-h-screen flex flex-col antialiased selection:bg-primary/30">
+<!-- Top App Bar -->
+<div class="sticky top-0 z-50 bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-md border-b border-gray-200 dark:border-gray-800">
+<div class="flex items-center px-4 py-3 justify-between">
+<button class="text-gray-900 dark:text-white flex size-10 shrink-0 items-center justify-center rounded-full hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors">
+<span class="material-symbols-outlined text-2xl">arrow_back_ios_new</span>
+</button>
+<h2 class="text-gray-900 dark:text-white text-lg font-bold leading-tight tracking-tight flex-1 text-center pr-2">
+                Denetim &amp; Yasal
+            </h2>
+<div class="flex w-10 items-center justify-end">
+<button class="flex size-10 items-center justify-center rounded-full hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors text-primary">
+<span class="material-symbols-outlined text-2xl">filter_list</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Main Content -->
+<main class="flex-1 w-full max-w-md mx-auto p-4 pb-20 space-y-6">
+<!-- KVKK / Legal Card -->
+<section>
+<div class="bg-cover bg-center flex flex-col items-stretch justify-end rounded-xl shadow-lg relative overflow-hidden h-[200px] group cursor-pointer transition-transform transform active:scale-[0.98]" data-alt="Abstract legal document background with dark blue gradient" style='background-image: linear-gradient(180deg, rgba(16, 24, 34, 0.2) 0%, rgba(16, 24, 34, 0.95) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuDl-is4AuKM5OQBW39hzD-dbQbcs6fMvF2X48kHZ9dB8vGo5pLMBgJhkzd5BrJ4Q21JB_ayui6BZFABEspFW23qqJ-NH07PYX7gEx93BICocR50kjgo--0OsCHD0DzbLf_KTyMEALs2cB0NnDuZX-A70CO6NvoBWr9qLe7KkM9EdsH1-1AkE1bcNSTb_YALOstwoTeErWe46UDSqHoyTcGMTzPclIZUHFSEgQQkrvndo4F2yFmED2nPi-cIbmf-LftWsgHnoJVZAWSL");'>
+<div class="absolute top-4 right-4 bg-white/10 backdrop-blur-sm rounded-full p-2 text-white border border-white/10">
+<span class="material-symbols-outlined text-xl block">policy</span>
+</div>
+<div class="flex w-full items-end justify-between gap-4 p-5 z-10">
+<div class="flex flex-1 flex-col gap-1">
+<p class="text-white tracking-tight text-xl font-bold leading-tight">Yasal &amp; KVKK Yönetimi</p>
+<p class="text-gray-300 text-sm font-medium leading-normal line-clamp-2">Veri politikaları, rıza metinleri ve yasal uyumluluk durumunu buradan yönetin.</p>
+</div>
+<button class="flex shrink-0 items-center justify-center rounded-lg h-9 px-4 bg-primary hover:bg-primary/90 text-white text-sm font-bold shadow-md transition-colors">
+<span>Görüntüle</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Search & Filter -->
+<section class="space-y-3 sticky top-[60px] z-40 bg-background-light dark:bg-background-dark py-2 -mx-4 px-4 shadow-sm dark:shadow-none border-b border-gray-200 dark:border-gray-800/50">
+<!-- Search Bar -->
+<label class="flex flex-col w-full">
+<div class="flex w-full items-center rounded-xl h-12 bg-white dark:bg-surface-dark shadow-sm border border-gray-200 dark:border-gray-700 focus-within:ring-2 focus-within:ring-primary focus-within:border-primary transition-all overflow-hidden">
+<div class="text-gray-500 dark:text-gray-400 flex items-center justify-center pl-4">
+<span class="material-symbols-outlined">search</span>
+</div>
+<input class="w-full bg-transparent border-none text-gray-900 dark:text-white placeholder:text-gray-400 px-3 py-2 focus:ring-0 text-base" placeholder="Kullanıcı ID veya eylem ara..." value=""/>
+</div>
+</label>
+<!-- Chips -->
+<div class="flex gap-2 overflow-x-auto hide-scrollbar pb-1">
+<button class="flex h-8 shrink-0 items-center justify-center px-4 rounded-full bg-primary text-white shadow-sm">
+<span class="text-xs font-semibold">Tümü</span>
+</button>
+<button class="flex h-8 shrink-0 items-center justify-center px-4 rounded-full bg-white dark:bg-surface-dark border border-gray-200 dark:border-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors">
+<span class="text-xs font-medium">Son 24 Saat</span>
+</button>
+<button class="flex h-8 shrink-0 items-center justify-center px-4 rounded-full bg-white dark:bg-surface-dark border border-gray-200 dark:border-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors">
+<span class="text-xs font-medium">Kritik</span>
+</button>
+<button class="flex h-8 shrink-0 items-center justify-center px-4 rounded-full bg-white dark:bg-surface-dark border border-gray-200 dark:border-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors">
+<span class="text-xs font-medium">Hatalı Giriş</span>
+</button>
+</div>
+</section>
+<!-- Audit Log List -->
+<section>
+<div class="flex items-center justify-between mb-4 mt-2">
+<h3 class="text-gray-900 dark:text-white text-lg font-bold">Sistem Hareketleri</h3>
+<span class="text-xs font-medium text-gray-500 dark:text-gray-400">Toplam 1.245 kayıt</span>
+</div>
+<div class="space-y-3">
+<!-- Log Item 1: Admin Action -->
+<div class="flex items-start gap-3 p-3 rounded-xl bg-white dark:bg-surface-dark border border-gray-100 dark:border-gray-800 shadow-sm">
+<div class="relative">
+<div class="size-10 rounded-full bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center text-blue-600 dark:text-blue-400 font-bold text-sm">
+                            AY
+                        </div>
+<div class="absolute -bottom-1 -right-1 bg-green-500 rounded-full p-0.5 border-2 border-white dark:border-surface-dark">
+<span class="material-symbols-outlined text-[10px] text-white block">check</span>
+</div>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-start">
+<p class="text-sm font-bold text-gray-900 dark:text-white truncate">Not Güncellemesi</p>
+<span class="text-xs text-gray-500 dark:text-gray-400 whitespace-nowrap ml-2">14:30</span>
+</div>
+<p class="text-xs text-gray-500 dark:text-gray-400 mt-0.5 truncate">Ahmet Yılmaz (Admin)</p>
+<p class="text-xs text-gray-400 dark:text-gray-500 mt-1 font-mono">Hedef: Öğrenci #29381</p>
+</div>
+</div>
+<!-- Log Item 2: Student Action -->
+<div class="flex items-start gap-3 p-3 rounded-xl bg-white dark:bg-surface-dark border border-gray-100 dark:border-gray-800 shadow-sm">
+<div class="relative">
+<img alt="User Avatar" class="size-10 rounded-full object-cover" data-alt="Portrait of a female student" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDBi5_V-gLhOfRudGxhxcemdVJVD5bz2939W1L4a4Kg1UAxHVA5WPb1NkzCqmObtZRhUGstCgH3reJ6av4XaEd9ofSKmbr7Pjk-fv5TPvzJRDrRpmo5yGe1Wi13akGH-qBxCHXAJSeu70DvU4D0FMACDykCUjHSPWxs8Rz6z6Y9vA1T-t7SH7oyY8mqZbHn7srsAU4otGs5JP24ARJlnozlMAh9r4WrASMkex_dRSsLVf9_BmeINTNMFath1J6y7Ve-XXTWYuQcDTnN"/>
+<div class="absolute -bottom-1 -right-1 bg-green-500 rounded-full p-0.5 border-2 border-white dark:border-surface-dark">
+<span class="material-symbols-outlined text-[10px] text-white block">check</span>
+</div>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-start">
+<p class="text-sm font-bold text-gray-900 dark:text-white truncate">Belge İndirme</p>
+<span class="text-xs text-gray-500 dark:text-gray-400 whitespace-nowrap ml-2">13:15</span>
+</div>
+<p class="text-xs text-gray-500 dark:text-gray-400 mt-0.5 truncate">Selin Demir (Öğrenci)</p>
+<div class="flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-[10px] text-gray-400">description</span>
+<p class="text-xs text-gray-400 dark:text-gray-500 truncate">Transkript_2023.pdf</p>
+</div>
+</div>
+</div>
+<!-- Log Item 3: Failed Login (Security Alert) -->
+<div class="flex items-start gap-3 p-3 rounded-xl bg-red-50 dark:bg-red-900/10 border border-red-100 dark:border-red-900/30 shadow-sm relative overflow-hidden">
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-red-500"></div>
+<div class="relative ml-1">
+<div class="size-10 rounded-full bg-red-100 dark:bg-red-900/40 flex items-center justify-center text-red-600 dark:text-red-400">
+<span class="material-symbols-outlined text-lg">lock_person</span>
+</div>
+</div>
+<div class="flex-1 min-w-0 ml-1">
+<div class="flex justify-between items-start">
+<p class="text-sm font-bold text-red-700 dark:text-red-400 truncate">Hatalı Giriş Denemesi</p>
+<span class="text-xs text-red-600/70 dark:text-red-400/70 whitespace-nowrap ml-2">11:42</span>
+</div>
+<p class="text-xs text-gray-600 dark:text-gray-400 mt-0.5 truncate">IP: 192.168.1.45 (Bilinmeyen Cihaz)</p>
+<p class="text-xs text-red-600/60 dark:text-red-400/60 mt-1 font-medium">3 kez başarısız deneme</p>
+</div>
+</div>
+<!-- Log Item 4: Data Change -->
+<div class="flex items-start gap-3 p-3 rounded-xl bg-white dark:bg-surface-dark border border-gray-100 dark:border-gray-800 shadow-sm">
+<div class="relative">
+<div class="size-10 rounded-full bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center text-purple-600 dark:text-purple-400 font-bold text-sm">
+                            MK
+                        </div>
+<div class="absolute -bottom-1 -right-1 bg-green-500 rounded-full p-0.5 border-2 border-white dark:border-surface-dark">
+<span class="material-symbols-outlined text-[10px] text-white block">check</span>
+</div>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-start">
+<p class="text-sm font-bold text-gray-900 dark:text-white truncate">Müfredat Onayı</p>
+<span class="text-xs text-gray-500 dark:text-gray-400 whitespace-nowrap ml-2">09:10</span>
+</div>
+<p class="text-xs text-gray-500 dark:text-gray-400 mt-0.5 truncate">Mehmet Kaya (Dekan)</p>
+<p class="text-xs text-gray-400 dark:text-gray-500 mt-1 font-mono">Bölüm: Bilgisayar Müh.</p>
+</div>
+</div>
+<!-- Log Item 5: System -->
+<div class="flex items-start gap-3 p-3 rounded-xl bg-white dark:bg-surface-dark border border-gray-100 dark:border-gray-800 shadow-sm opacity-70">
+<div class="relative">
+<div class="size-10 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center text-gray-500 dark:text-gray-400">
+<span class="material-symbols-outlined text-lg">dns</span>
+</div>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-start">
+<p class="text-sm font-bold text-gray-900 dark:text-white truncate">Otomatik Yedekleme</p>
+<span class="text-xs text-gray-500 dark:text-gray-400 whitespace-nowrap ml-2">04:00</span>
+</div>
+<p class="text-xs text-gray-500 dark:text-gray-400 mt-0.5 truncate">Sistem</p>
+<p class="text-xs text-gray-400 dark:text-gray-500 mt-1">Veritabanı Yedeği (Günlük)</p>
+</div>
+</div>
+</div>
+<button class="w-full mt-4 py-3 text-sm text-primary font-medium flex items-center justify-center gap-1 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors">
+                Daha Fazla Göster
+                <span class="material-symbols-outlined text-lg">expand_more</span>
+</button>
+</section>
+<!-- Session Management (Collapsible Style) -->
+<section class="border-t border-gray-200 dark:border-gray-800 pt-6">
+<h3 class="text-gray-900 dark:text-white text-lg font-bold mb-3 px-1">Aktif Oturum Bilgisi</h3>
+<div class="bg-surface-light dark:bg-surface-dark rounded-xl border border-gray-200 dark:border-gray-800 p-4 shadow-sm">
+<div class="flex items-center gap-4">
+<div class="flex items-center justify-center size-12 bg-gray-100 dark:bg-gray-800 rounded-lg text-gray-600 dark:text-gray-300">
+<span class="material-symbols-outlined text-2xl">smartphone</span>
+</div>
+<div class="flex-1">
+<p class="text-sm font-bold text-gray-900 dark:text-white">iPhone 13 Pro</p>
+<div class="flex items-center gap-1 mt-0.5">
+<span class="size-2 bg-green-500 rounded-full animate-pulse"></span>
+<p class="text-xs text-gray-500 dark:text-gray-400">Şu an aktif • İstanbul, TR</p>
+</div>
+<p class="text-[10px] text-gray-400 font-mono mt-1">IP: 192.168.1.1</p>
+</div>
+<button class="text-red-500 text-xs font-bold px-3 py-1.5 bg-red-50 dark:bg-red-900/20 rounded-lg hover:bg-red-100 dark:hover:bg-red-900/30 transition-colors">
+                        Sonlandır
+                    </button>
+</div>
+</div>
+</section>
+</main>
+</body></html>

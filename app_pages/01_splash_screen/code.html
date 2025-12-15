@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>01 Splash Screen - Kampüs ÖBS</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#2b7cee",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101822",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-white overflow-hidden antialiased selection:bg-primary/30">
+<!-- Splash Screen Container -->
+<div class="relative flex h-screen w-full flex-col items-center justify-between py-12 px-6">
+<!-- Ambient Background Glow -->
+<div class="pointer-events-none absolute inset-0 z-0 overflow-hidden">
+<div class="absolute -top-[10%] -left-[10%] h-[60vh] w-[60vh] rounded-full bg-primary/10 blur-[120px]"></div>
+<div class="absolute top-[40%] -right-[10%] h-[50vh] w-[50vh] rounded-full bg-blue-600/5 blur-[100px]"></div>
+</div>
+<!-- Spacer for vertical centering -->
+<div class="flex-1"></div>
+<!-- Central Content: Logo & Loader -->
+<div class="relative z-10 flex w-full max-w-sm flex-col items-center gap-8">
+<!-- Logo Component (Modified from ImageGrid) -->
+<div class="flex flex-col items-center gap-6">
+<div class="relative h-28 w-28 overflow-hidden rounded-2xl shadow-2xl shadow-primary/20 ring-1 ring-white/10 bg-[#1c2530]">
+<div class="h-full w-full bg-center bg-no-repeat bg-cover opacity-90" data-alt="University Abstract Geometric Logo in Blue" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDf1yzzAb-Qdsl1BOZOqoewiXKkHtMzmISAEgLZbqN9x_cfur7BJv1t5z7iQhpYh5Y5oXOkeBCLhH9ikqIf87XfJGrfibywKHVHrE86J7nAw7U6FAevnf3c3sQ5NaoNW98WCVit9a7tyFJIg76s3EpyGzlAMSE6zYYZzsRtRIiGZLcTRJIeZDLrsL_aOWFjNnp-YhCrZIrP7rBhigpn2uIGRxd7CyxZp-debegaIdi6TIORAF9c_vufj4T6DAIopXtWhx2OmJG5BNLK");'>
+</div>
+</div>
+<!-- HeadlineText -->
+<h1 class="text-3xl font-bold tracking-tight text-slate-900 dark:text-white text-center">
+                    Kampüs ÖBS
+                </h1>
+</div>
+<!-- Loading State -->
+<div class="w-full max-w-[200px] flex flex-col gap-3">
+<!-- ProgressBar -->
+<div class="h-1.5 w-full overflow-hidden rounded-full bg-slate-200 dark:bg-slate-800">
+<div class="h-full w-[45%] rounded-full bg-primary animate-[pulse_1.5s_ease-in-out_infinite]"></div>
+</div>
+<!-- MetaText -->
+<p class="text-slate-500 dark:text-slate-400 text-xs font-medium text-center animate-pulse">
+                    Verifying session...
+                </p>
+</div>
+</div>
+<!-- Spacer for vertical centering -->
+<div class="flex-1"></div>
+<!-- Offline Alert (ActionPanel - Condition State) -->
+<!-- This represents the Offline state sliding in from the bottom -->
+<div class="relative z-20 w-full max-w-md animate-[slideInUp_0.5s_ease-out]">
+<div class="flex flex-col gap-4 rounded-xl border border-slate-200 dark:border-slate-800 bg-white/80 dark:bg-[#151c24]/90 backdrop-blur-md p-4 shadow-lg ring-1 ring-black/5">
+<div class="flex items-center gap-4">
+<div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-red-100 dark:bg-red-500/20 text-red-600 dark:text-red-400">
+<span class="material-symbols-outlined text-[20px]">wifi_off</span>
+</div>
+<div class="flex flex-1 flex-col">
+<p class="text-slate-900 dark:text-white text-sm font-bold leading-tight">No Internet Connection</p>
+<p class="text-slate-500 dark:text-slate-400 text-xs font-normal leading-normal mt-1">Please check your settings and try again.</p>
+</div>
+<!-- Retry Button -->
+<button class="flex shrink-0 cursor-pointer items-center justify-center rounded-lg bg-primary/10 hover:bg-primary/20 dark:bg-primary/20 dark:hover:bg-primary/30 px-4 py-2 transition-colors">
+<span class="text-primary text-xs font-bold">Retry</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Footer Info -->
+<div class="relative z-10 mt-6 pb-2">
+<p class="text-[10px] text-slate-400 dark:text-slate-600 font-medium tracking-wide uppercase">Version 2.4.0</p>
+</div>
+</div>
+<!-- Animation Keyframes -->
+<style>
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</body></html>

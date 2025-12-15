@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="tr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Derslerim - Öğretim Elemanı</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Config -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#2b7cee",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101822",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<!-- Google Fonts: Inter -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Hide scrollbar for clean horizontal scroll */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-[#111418] dark:text-white transition-colors duration-200">
+<div class="relative flex min-h-screen flex-col overflow-hidden max-w-md mx-auto shadow-2xl bg-background-light dark:bg-background-dark pb-20">
+<!-- Header -->
+<div class="flex items-center justify-between p-4 pb-2 sticky top-0 z-10 bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-sm">
+<div class="flex items-center gap-3">
+<button class="flex items-center justify-center text-[#111418] dark:text-white">
+<span class="material-symbols-outlined text-2xl">arrow_back</span>
+</button>
+<h1 class="text-xl font-bold leading-tight tracking-[-0.015em]">Derslerim</h1>
+</div>
+<div class="flex items-center gap-2">
+<button class="relative">
+<div class="size-10 overflow-hidden rounded-full bg-gray-200 dark:bg-gray-700">
+<img alt="Profile" class="size-full object-cover" data-alt="Instructor profile picture showing a professional headshot" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-kD3dIfMTw5h-XVx5vYtdmH6k8pNVlz1M2GhtQWl2raFm3kTtsSOHHYx_9z46A7NAOKsHg-c05Pv4zP8j_HqblTnt3WtvPvPucm8-dYAJ-r98bcDMaxBqtsRtsI1-vHZbVxkyM8u0sMUasAWe8K6ILbYWCLdX7MQUCTQnqf_z1Vz6YpuB9iiWlgc8-FUvbFdWpQucXY_VALP8S_Uhrx3HXBz89yQKa2-Gola7fSM6tucH4dRLktfepWFGDdM-6JXGusJkkuETGv0Y"/>
+</div>
+<div class="absolute bottom-0 right-0 size-3 rounded-full bg-green-500 border-2 border-background-light dark:border-background-dark"></div>
+</button>
+</div>
+</div>
+<!-- Search Bar -->
+<div class="px-4 py-3">
+<div class="flex w-full items-center rounded-xl bg-white dark:bg-[#1e2530] h-12 shadow-sm border border-slate-200 dark:border-slate-800 focus-within:ring-2 focus-within:ring-primary/50 transition-all">
+<div class="flex items-center justify-center pl-4 text-[#9da8b9]">
+<span class="material-symbols-outlined">search</span>
+</div>
+<input class="flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-xl bg-transparent px-4 text-base font-normal leading-normal text-[#111418] dark:text-white placeholder-[#9da8b9] focus:outline-none" placeholder="Ders kodu veya adı ile ara..." value=""/>
+</div>
+</div>
+<!-- Semester Filter (Chips) -->
+<div class="flex gap-3 px-4 py-2 overflow-x-auto no-scrollbar">
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-primary px-4 shadow-md shadow-primary/20 transition-transform active:scale-95">
+<p class="text-white text-sm font-semibold leading-normal">2023-2024 Güz</p>
+<span class="material-symbols-outlined text-white text-[20px]">check</span>
+</button>
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-white dark:bg-[#282f39] border border-slate-200 dark:border-transparent px-4 transition-transform active:scale-95">
+<p class="text-[#111418] dark:text-white text-sm font-medium leading-normal">2022-2023 Bahar</p>
+</button>
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-white dark:bg-[#282f39] border border-slate-200 dark:border-transparent px-4 transition-transform active:scale-95">
+<p class="text-[#111418] dark:text-white text-sm font-medium leading-normal">2022-2023 Güz</p>
+</button>
+</div>
+<!-- Course List -->
+<div class="flex flex-col gap-4 p-4">
+<!-- Card 1 -->
+<div class="group relative flex flex-col gap-3 rounded-2xl bg-white dark:bg-[#1e2530] p-4 shadow-sm border border-slate-200 dark:border-slate-800 hover:border-primary/50 transition-all cursor-pointer">
+<!-- Header of Card -->
+<div class="flex justify-between items-start">
+<div class="flex items-center gap-2">
+<span class="inline-flex items-center rounded-md bg-primary/10 px-2 py-1 text-xs font-bold text-primary ring-1 ring-inset ring-primary/20">
+                            CST304
+                        </span>
+<span class="inline-flex items-center rounded-md bg-slate-100 dark:bg-slate-700 px-2 py-1 text-xs font-medium text-slate-600 dark:text-slate-300">
+                            Şube 1
+                        </span>
+</div>
+<span class="material-symbols-outlined text-slate-400 group-hover:text-primary transition-colors">chevron_right</span>
+</div>
+<!-- Main Content -->
+<div class="flex items-center gap-4">
+<div class="flex size-12 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-blue-500 to-indigo-600 text-white shadow-md">
+<span class="material-symbols-outlined">code</span>
+</div>
+<div>
+<h3 class="text-base font-bold text-[#111418] dark:text-white leading-tight">Yazılım Mühendisliği</h3>
+<p class="text-sm text-slate-500 dark:text-slate-400 mt-0.5">Mühendislik Fakültesi</p>
+</div>
+</div>
+<!-- Footer Info -->
+<div class="mt-1 flex items-center gap-4 border-t border-slate-100 dark:border-slate-700/50 pt-3">
+<div class="flex items-center gap-1.5 text-sm font-medium text-slate-600 dark:text-slate-300">
+<span class="material-symbols-outlined text-[18px] text-primary">schedule</span>
+<span>Pazartesi, 13:00</span>
+</div>
+<div class="flex items-center gap-1.5 text-sm font-medium text-slate-600 dark:text-slate-300">
+<span class="material-symbols-outlined text-[18px] text-primary">location_on</span>
+<span>D-204</span>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="group relative flex flex-col gap-3 rounded-2xl bg-white dark:bg-[#1e2530] p-4 shadow-sm border border-slate-200 dark:border-slate-800 hover:border-primary/50 transition-all cursor-pointer">
+<div class="flex justify-between items-start">
+<div class="flex items-center gap-2">
+<span class="inline-flex items-center rounded-md bg-primary/10 px-2 py-1 text-xs font-bold text-primary ring-1 ring-inset ring-primary/20">
+                            CST101
+                        </span>
+<span class="inline-flex items-center rounded-md bg-slate-100 dark:bg-slate-700 px-2 py-1 text-xs font-medium text-slate-600 dark:text-slate-300">
+                            Şube 2
+                        </span>
+</div>
+<span class="material-symbols-outlined text-slate-400 group-hover:text-primary transition-colors">chevron_right</span>
+</div>
+<div class="flex items-center gap-4">
+<div class="flex size-12 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-emerald-500 to-teal-600 text-white shadow-md">
+<span class="material-symbols-outlined">terminal</span>
+</div>
+<div>
+<h3 class="text-base font-bold text-[#111418] dark:text-white leading-tight">Algoritmalar ve Programlama</h3>
+<p class="text-sm text-slate-500 dark:text-slate-400 mt-0.5">Mühendislik Fakültesi</p>
+</div>
+</div>
+<div class="mt-1 flex items-center gap-4 border-t border-slate-100 dark:border-slate-700/50 pt-3">
+<div class="flex items-center gap-1.5 text-sm font-medium text-slate-600 dark:text-slate-300">
+<span class="material-symbols-outlined text-[18px] text-primary">schedule</span>
+<span>Salı, 09:00</span>
+</div>
+<div class="flex items-center gap-1.5 text-sm font-medium text-slate-600 dark:text-slate-300">
+<span class="material-symbols-outlined text-[18px] text-primary">location_on</span>
+<span>Lab-A</span>
+</div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="group relative flex flex-col gap-3 rounded-2xl bg-white dark:bg-[#1e2530] p-4 shadow-sm border border-slate-200 dark:border-slate-800 hover:border-primary/50 transition-all cursor-pointer">
+<div class="flex justify-between items-start">
+<div class="flex items-center gap-2">
+<span class="inline-flex items-center rounded-md bg-primary/10 px-2 py-1 text-xs font-bold text-primary ring-1 ring-inset ring-primary/20">
+                            MAT201
+                        </span>
+<span class="inline-flex items-center rounded-md bg-slate-100 dark:bg-slate-700 px-2 py-1 text-xs font-medium text-slate-600 dark:text-slate-300">
+                            Şube 1
+                        </span>
+</div>
+<span class="material-symbols-outlined text-slate-400 group-hover:text-primary transition-colors">chevron_right</span>
+</div>
+<div class="flex items-center gap-4">
+<div class="flex size-12 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-orange-500 to-red-600 text-white shadow-md">
+<span class="material-symbols-outlined">calculate</span>
+</div>
+<div>
+<h3 class="text-base font-bold text-[#111418] dark:text-white leading-tight">Lineer Cebir</h3>
+<p class="text-sm text-slate-500 dark:text-slate-400 mt-0.5">Fen Edebiyat Fakültesi</p>
+</div>
+</div>
+<div class="mt-1 flex items-center gap-4 border-t border-slate-100 dark:border-slate-700/50 pt-3">
+<div class="flex items-center gap-1.5 text-sm font-medium text-slate-600 dark:text-slate-300">
+<span class="material-symbols-outlined text-[18px] text-primary">schedule</span>
+<span>Çarşamba, 14:00</span>
+</div>
+<div class="flex items-center gap-1.5 text-sm font-medium text-slate-600 dark:text-slate-300">
+<span class="material-symbols-outlined text-[18px] text-primary">location_on</span>
+<span>Amfi 3</span>
+</div>
+</div>
+</div>
+<!-- Card 4 (Inactive/Previous) -->
+<div class="group relative flex flex-col gap-3 rounded-2xl bg-white dark:bg-[#1e2530] p-4 shadow-sm border border-slate-200 dark:border-slate-800 hover:border-primary/50 transition-all cursor-pointer opacity-80 hover:opacity-100">
+<div class="flex justify-between items-start">
+<div class="flex items-center gap-2">
+<span class="inline-flex items-center rounded-md bg-primary/10 px-2 py-1 text-xs font-bold text-primary ring-1 ring-inset ring-primary/20">
+                            CST402
+                        </span>
+<span class="inline-flex items-center rounded-md bg-slate-100 dark:bg-slate-700 px-2 py-1 text-xs font-medium text-slate-600 dark:text-slate-300">
+                            Şube 1
+                        </span>
+</div>
+<span class="material-symbols-outlined text-slate-400 group-hover:text-primary transition-colors">chevron_right</span>
+</div>
+<div class="flex items-center gap-4">
+<div class="flex size-12 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-purple-500 to-pink-600 text-white shadow-md">
+<span class="material-symbols-outlined">school</span>
+</div>
+<div>
+<h3 class="text-base font-bold text-[#111418] dark:text-white leading-tight">Bitirme Projesi II</h3>
+<p class="text-sm text-slate-500 dark:text-slate-400 mt-0.5">Mühendislik Fakültesi</p>
+</div>
+</div>
+<div class="mt-1 flex items-center gap-4 border-t border-slate-100 dark:border-slate-700/50 pt-3">
+<div class="flex items-center gap-1.5 text-sm font-medium text-slate-600 dark:text-slate-300">
+<span class="material-symbols-outlined text-[18px] text-primary">schedule</span>
+<span>Cuma, 10:00</span>
+</div>
+<div class="flex items-center gap-1.5 text-sm font-medium text-slate-600 dark:text-slate-300">
+<span class="material-symbols-outlined text-[18px] text-primary">location_on</span>
+<span>Toplantı Salonu</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom Navigation -->
+<div class="fixed bottom-0 left-0 right-0 z-50 bg-white dark:bg-[#101822] border-t border-slate-200 dark:border-slate-800 pb-safe">
+<div class="flex items-center justify-around h-16 max-w-md mx-auto">
+<button class="flex flex-col items-center justify-center gap-1 text-primary w-full h-full">
+<span class="material-symbols-outlined filled">menu_book</span>
+<span class="text-[10px] font-medium">Derslerim</span>
+</button>
+<button class="flex flex-col items-center justify-center gap-1 text-slate-400 dark:text-slate-500 hover:text-slate-600 dark:hover:text-slate-300 w-full h-full">
+<span class="material-symbols-outlined">calendar_today</span>
+<span class="text-[10px] font-medium">Takvim</span>
+</button>
+<div class="relative w-full h-full flex flex-col items-center justify-center">
+<button class="flex flex-col items-center justify-center gap-1 text-slate-400 dark:text-slate-500 hover:text-slate-600 dark:hover:text-slate-300 w-full h-full">
+<span class="material-symbols-outlined">chat_bubble</span>
+<span class="text-[10px] font-medium">Mesajlar</span>
+</button>
+<!-- Notification Dot -->
+<span class="absolute top-3 right-8 flex h-2.5 w-2.5">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-red-500"></span>
+</span>
+</div>
+<button class="flex flex-col items-center justify-center gap-1 text-slate-400 dark:text-slate-500 hover:text-slate-600 dark:hover:text-slate-300 w-full h-full">
+<span class="material-symbols-outlined">person</span>
+<span class="text-[10px] font-medium">Profil</span>
+</button>
+</div>
+</div>
+</div>
+</body></html>

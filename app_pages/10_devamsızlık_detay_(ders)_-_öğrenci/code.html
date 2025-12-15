@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="tr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Devamsızlık Detay - Öğrenci</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Config -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#2b7cee",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101822",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#1c2430",
+                        "status-green": "#22c55e",
+                        "status-red": "#ef4444",
+                        "status-yellow": "#eab308",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display antialiased text-slate-900 dark:text-white transition-colors duration-200">
+<div class="relative flex h-full min-h-screen w-full flex-col max-w-md mx-auto overflow-x-hidden shadow-2xl">
+<!-- Header -->
+<header class="sticky top-0 z-20 flex items-center bg-surface-light dark:bg-surface-dark p-4 pb-3 justify-between border-b border-slate-200 dark:border-slate-800 shadow-sm">
+<button class="text-slate-900 dark:text-white flex size-10 shrink-0 items-center justify-center rounded-full hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors">
+<span class="material-symbols-outlined text-[24px]">arrow_back</span>
+</button>
+<h2 class="text-slate-900 dark:text-white text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center pr-10 truncate">
+                MAT101 - Matematik I
+            </h2>
+</header>
+<!-- Main Content -->
+<main class="flex-1 overflow-y-auto pb-8">
+<!-- Summary Card -->
+<div class="p-4">
+<div class="flex flex-col gap-4 rounded-xl bg-surface-light dark:bg-surface-dark p-5 shadow-[0_2px_8px_rgba(0,0,0,0.08)] border border-slate-100 dark:border-slate-800">
+<div class="flex items-start justify-between">
+<div>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-medium">Toplam Devamsızlık</p>
+<h3 class="text-3xl font-bold text-slate-900 dark:text-white mt-1">4 Saat</h3>
+</div>
+<div class="flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 text-primary">
+<span class="material-symbols-outlined text-[28px]">schedule</span>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<div class="flex justify-between items-end">
+<span class="text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">Limit Durumu</span>
+<span class="text-sm font-bold text-primary">%28 Kullanıldı</span>
+</div>
+<div class="h-2.5 w-full rounded-full bg-slate-100 dark:bg-slate-700 overflow-hidden">
+<div class="h-full bg-primary rounded-full transition-all duration-500 ease-out" style="width: 28%"></div>
+</div>
+<p class="text-xs text-slate-500 dark:text-slate-400 text-right mt-1">Sınır: 14 Saat</p>
+</div>
+</div>
+</div>
+<!-- Section Header -->
+<div class="px-4 pb-2 pt-2">
+<h3 class="text-slate-900 dark:text-white text-lg font-bold leading-tight tracking-[-0.015em]">Yoklama Geçmişi</h3>
+</div>
+<!-- Timeline -->
+<div class="relative px-4">
+<!-- Timeline Line -->
+<div class="absolute left-[34px] top-4 bottom-4 w-0.5 bg-slate-200 dark:bg-slate-700"></div>
+<!-- Item 1: Absent (Red) -->
+<div class="relative grid grid-cols-[40px_1fr] gap-x-3 py-4">
+<div class="flex flex-col items-center">
+<div class="flex size-10 items-center justify-center rounded-full bg-status-red/10 border-2 border-surface-light dark:border-background-dark z-10">
+<span class="material-symbols-outlined text-status-red text-[20px]">close</span>
+</div>
+</div>
+<div class="flex flex-col gap-1 rounded-lg bg-surface-light dark:bg-surface-dark p-4 shadow-sm border border-slate-100 dark:border-slate-800">
+<div class="flex justify-between items-start">
+<div>
+<p class="text-slate-900 dark:text-white text-base font-bold">24 Ekim 2023</p>
+<p class="text-slate-500 dark:text-slate-400 text-sm">09:00 - 11:00</p>
+</div>
+<span class="inline-flex items-center rounded-full bg-status-red/10 px-2.5 py-0.5 text-xs font-medium text-status-red">
+                                Yok
+                            </span>
+</div>
+<div class="mt-2 flex items-start gap-2 rounded bg-background-light dark:bg-background-dark/50 p-2 text-xs text-slate-600 dark:text-slate-400 border border-slate-200 dark:border-slate-700/50">
+<span class="material-symbols-outlined text-[16px] mt-0.5 shrink-0">info</span>
+<p>Öğrenci işlerine rapor teslim edildi, henüz sisteme işlenmedi.</p>
+</div>
+</div>
+</div>
+<!-- Item 2: Present (Green) -->
+<div class="relative grid grid-cols-[40px_1fr] gap-x-3 py-4">
+<div class="flex flex-col items-center">
+<div class="flex size-10 items-center justify-center rounded-full bg-status-green/10 border-2 border-surface-light dark:border-background-dark z-10">
+<span class="material-symbols-outlined text-status-green text-[20px]">check</span>
+</div>
+</div>
+<div class="flex flex-col gap-1 rounded-lg bg-surface-light dark:bg-surface-dark p-4 shadow-sm border border-slate-100 dark:border-slate-800">
+<div class="flex justify-between items-start">
+<div>
+<p class="text-slate-900 dark:text-white text-base font-bold">17 Ekim 2023</p>
+<p class="text-slate-500 dark:text-slate-400 text-sm">09:00 - 11:00</p>
+</div>
+<span class="inline-flex items-center rounded-full bg-status-green/10 px-2.5 py-0.5 text-xs font-medium text-status-green">
+                                Var
+                            </span>
+</div>
+</div>
+</div>
+<!-- Item 3: Excused (Primary/Blue) -->
+<div class="relative grid grid-cols-[40px_1fr] gap-x-3 py-4">
+<div class="flex flex-col items-center">
+<div class="flex size-10 items-center justify-center rounded-full bg-primary/10 border-2 border-surface-light dark:border-background-dark z-10">
+<span class="material-symbols-outlined text-primary text-[20px]">remove</span>
+</div>
+</div>
+<div class="flex flex-col gap-1 rounded-lg bg-surface-light dark:bg-surface-dark p-4 shadow-sm border border-slate-100 dark:border-slate-800">
+<div class="flex justify-between items-start">
+<div>
+<p class="text-slate-900 dark:text-white text-base font-bold">10 Ekim 2023</p>
+<p class="text-slate-500 dark:text-slate-400 text-sm">09:00 - 11:00</p>
+</div>
+<span class="inline-flex items-center rounded-full bg-primary/10 px-2.5 py-0.5 text-xs font-medium text-primary">
+                                İzinli
+                            </span>
+</div>
+<div class="mt-2 text-xs text-slate-500 dark:text-slate-500 italic">
+                            Resmi tatil nedeniyle ders yapılmadı.
+                        </div>
+</div>
+</div>
+<!-- Item 4: Present (Green) -->
+<div class="relative grid grid-cols-[40px_1fr] gap-x-3 py-4">
+<div class="flex flex-col items-center">
+<div class="flex size-10 items-center justify-center rounded-full bg-status-green/10 border-2 border-surface-light dark:border-background-dark z-10">
+<span class="material-symbols-outlined text-status-green text-[20px]">check</span>
+</div>
+</div>
+<div class="flex flex-col gap-1 rounded-lg bg-surface-light dark:bg-surface-dark p-4 shadow-sm border border-slate-100 dark:border-slate-800">
+<div class="flex justify-between items-start">
+<div>
+<p class="text-slate-900 dark:text-white text-base font-bold">03 Ekim 2023</p>
+<p class="text-slate-500 dark:text-slate-400 text-sm">09:00 - 11:00</p>
+</div>
+<span class="inline-flex items-center rounded-full bg-status-green/10 px-2.5 py-0.5 text-xs font-medium text-status-green">
+                                Var
+                            </span>
+</div>
+</div>
+</div>
+<!-- Item 5: Present (Green) -->
+<div class="relative grid grid-cols-[40px_1fr] gap-x-3 py-4">
+<div class="flex flex-col items-center">
+<div class="flex size-10 items-center justify-center rounded-full bg-status-green/10 border-2 border-surface-light dark:border-background-dark z-10">
+<span class="material-symbols-outlined text-status-green text-[20px]">check</span>
+</div>
+</div>
+<div class="flex flex-col gap-1 rounded-lg bg-surface-light dark:bg-surface-dark p-4 shadow-sm border border-slate-100 dark:border-slate-800">
+<div class="flex justify-between items-start">
+<div>
+<p class="text-slate-900 dark:text-white text-base font-bold">26 Eylül 2023</p>
+<p class="text-slate-500 dark:text-slate-400 text-sm">09:00 - 11:00</p>
+</div>
+<span class="inline-flex items-center rounded-full bg-status-green/10 px-2.5 py-0.5 text-xs font-medium text-status-green">
+                                Var
+                            </span>
+</div>
+</div>
+</div>
+</div>
+<div class="h-20"></div> <!-- Bottom Spacer -->
+</main>
+</div>
+</body></html>

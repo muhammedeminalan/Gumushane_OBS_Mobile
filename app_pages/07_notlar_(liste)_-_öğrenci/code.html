@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="tr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>07 Notlar (Liste) - Öğrenci</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Noto+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Theme Configuration -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#2b7cee",
+              "background-light": "#f6f7f8",
+              "background-dark": "#111418", // Darkened slightly for deep contrast
+              "surface-dark": "#1c2128",     // Card background
+              "text-secondary": "#9da8b9",
+            },
+            fontFamily: {
+              "display": ["Inter", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.5rem", "lg": "0.75rem", "xl": "1rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+        /* Hide scrollbar for clean UI */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.fill-1 {
+            font-variation-settings: 'FILL' 1;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white antialiased selection:bg-primary/30">
+<div class="relative flex h-full min-h-screen w-full flex-col max-w-md mx-auto bg-background-light dark:bg-background-dark overflow-x-hidden">
+<!-- Header -->
+<header class="sticky top-0 z-20 bg-background-light dark:bg-background-dark/95 backdrop-blur-md border-b border-gray-200 dark:border-gray-800 transition-colors">
+<div class="flex items-center p-4 justify-between h-16">
+<h2 class="text-xl font-bold leading-tight tracking-tight flex-1">Notlar</h2>
+<div class="flex items-center gap-3">
+<button class="relative flex items-center justify-center size-10 rounded-full hover:bg-gray-200 dark:hover:bg-surface-dark transition-colors text-slate-600 dark:text-white">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-2.5 right-2.5 size-2 bg-red-500 rounded-full border-2 border-background-light dark:border-background-dark"></span>
+</button>
+<div class="size-9 rounded-full bg-gradient-to-tr from-primary to-purple-500 p-[2px]">
+<img alt="Student Profile Avatar" class="rounded-full w-full h-full object-cover border-2 border-background-light dark:border-background-dark" data-alt="Profile picture of a student" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBHZSMdpXCpHvFxzp8c2MVigAv7Nrxbz-XqAfGsNRnXmrFOn6whJVb9CD9R5sCTcMNIojHmHi4KLSN45LnayRYcpMVS_7qTXHkIbJOlFhHVGFstrE57CUIBZe6WCQxcf5YiR3uJem9r3Azzg-RAZuo49U_eFGDjfmCPjxn-iHaVQE7OxouVcKvjQbLvPWo_atYR7-4yrBO_3cmsGfvzG3-jZWW5SGLNe9EIT4TwlhNjn4BrRlyBUvgj7c2Det8vRZ-aHMLEIZh1ZXUU"/>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-1 flex flex-col gap-4 pb-24">
+<!-- Term Filters (Scrollable Chips) -->
+<div class="px-4 pt-2">
+<div class="flex gap-3 overflow-x-auto no-scrollbar pb-1">
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-primary text-white pl-4 pr-3 shadow-lg shadow-primary/20 transition-transform active:scale-95">
+<span class="text-sm font-semibold">2023-2024 Güz</span>
+<span class="material-symbols-outlined text-[18px]">check</span>
+</button>
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-white dark:bg-surface-dark border border-gray-200 dark:border-gray-700 pl-4 pr-3 text-slate-600 dark:text-white transition-colors active:scale-95">
+<span class="text-sm font-medium">2023-2024 Bahar</span>
+</button>
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-white dark:bg-surface-dark border border-gray-200 dark:border-gray-700 pl-4 pr-3 text-slate-600 dark:text-white transition-colors active:scale-95">
+<span class="text-sm font-medium">2022-2023 Yaz</span>
+</button>
+</div>
+</div>
+<!-- Profile/Term Stats -->
+<div class="px-4">
+<div class="flex flex-wrap gap-3">
+<div class="flex flex-1 flex-col gap-1 rounded-xl bg-white dark:bg-surface-dark p-4 border border-gray-200 dark:border-gray-800 shadow-sm relative overflow-hidden group">
+<div class="absolute right-0 top-0 p-3 opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-4xl text-primary">school</span>
+</div>
+<p class="text-slate-900 dark:text-white text-3xl font-bold leading-tight tracking-tight">3.45</p>
+<div class="flex items-center gap-1 text-slate-500 dark:text-text-secondary">
+<span class="text-xs font-medium uppercase tracking-wider">Dönem Ortalaması</span>
+</div>
+</div>
+<div class="flex flex-1 flex-col gap-1 rounded-xl bg-white dark:bg-surface-dark p-4 border border-gray-200 dark:border-gray-800 shadow-sm relative overflow-hidden group">
+<div class="absolute right-0 top-0 p-3 opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-4xl text-emerald-500">check_circle</span>
+</div>
+<p class="text-slate-900 dark:text-white text-3xl font-bold leading-tight tracking-tight">30</p>
+<div class="flex items-center gap-1 text-slate-500 dark:text-text-secondary">
+<span class="text-xs font-medium uppercase tracking-wider">AKTS Kredi</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Search Bar -->
+<div class="px-4 sticky top-[4rem] z-10 pt-2 pb-2 bg-background-light dark:bg-background-dark/95 backdrop-blur-sm -mx-1">
+<label class="relative flex items-center w-full group">
+<span class="absolute left-4 text-slate-400 dark:text-gray-500 material-symbols-outlined group-focus-within:text-primary transition-colors">search</span>
+<input class="form-input flex w-full rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-surface-dark py-3 pl-12 pr-4 text-sm font-medium text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-gray-500 focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none transition-all shadow-sm" placeholder="Ders adı veya kodu ara..." type="text"/>
+</label>
+</div>
+<!-- Course List -->
+<div class="flex flex-col gap-3 px-4">
+<div class="flex items-center justify-between pb-1">
+<h3 class="text-sm font-semibold text-slate-500 dark:text-gray-400 uppercase tracking-wider pl-1">Dersler</h3>
+<span class="text-xs text-slate-400 dark:text-gray-600">6 Ders Listeleniyor</span>
+</div>
+<!-- Course Item 1 -->
+<button class="flex w-full flex-col gap-3 rounded-xl bg-white dark:bg-surface-dark p-4 border border-gray-200 dark:border-gray-800 shadow-sm active:scale-[0.99] transition-all hover:border-primary/50 group text-left">
+<div class="flex w-full items-start justify-between gap-4">
+<div class="flex items-start gap-4">
+<div class="flex items-center justify-center rounded-lg bg-indigo-100 dark:bg-indigo-500/20 text-indigo-600 dark:text-indigo-400 shrink-0 size-12 group-hover:bg-indigo-200 dark:group-hover:bg-indigo-500/30 transition-colors">
+<span class="material-symbols-outlined fill-1">functions</span>
+</div>
+<div class="flex flex-1 flex-col justify-center">
+<p class="text-slate-900 dark:text-white text-base font-bold leading-tight">Matematik I</p>
+<p class="text-slate-500 dark:text-text-secondary text-sm font-medium mt-0.5">MAT101</p>
+</div>
+</div>
+<div class="flex flex-col items-end">
+<span class="text-primary text-lg font-bold">BB</span>
+<span class="text-xs text-slate-400 dark:text-gray-500 font-medium">75 Puan</span>
+</div>
+</div>
+<div class="h-px w-full bg-gray-100 dark:bg-gray-800"></div>
+<div class="flex w-full items-center justify-between">
+<p class="text-slate-400 dark:text-gray-500 text-xs font-medium">Vize: 80, Final: --</p>
+<p class="text-slate-400 dark:text-gray-500 text-xs font-medium">Bugün güncellendi</p>
+</div>
+</button>
+<!-- Course Item 2 -->
+<button class="flex w-full flex-col gap-3 rounded-xl bg-white dark:bg-surface-dark p-4 border border-gray-200 dark:border-gray-800 shadow-sm active:scale-[0.99] transition-all hover:border-primary/50 group text-left">
+<div class="flex w-full items-start justify-between gap-4">
+<div class="flex items-start gap-4">
+<div class="flex items-center justify-center rounded-lg bg-orange-100 dark:bg-orange-500/20 text-orange-600 dark:text-orange-400 shrink-0 size-12 group-hover:bg-orange-200 dark:group-hover:bg-orange-500/30 transition-colors">
+<span class="material-symbols-outlined fill-1">science</span>
+</div>
+<div class="flex flex-1 flex-col justify-center">
+<p class="text-slate-900 dark:text-white text-base font-bold leading-tight">Fizik I</p>
+<p class="text-slate-500 dark:text-text-secondary text-sm font-medium mt-0.5">FIZ101</p>
+</div>
+</div>
+<div class="flex flex-col items-end">
+<span class="text-slate-400 dark:text-gray-600 text-lg font-bold">--</span>
+<span class="text-xs text-slate-400 dark:text-gray-500 font-medium">--</span>
+</div>
+</div>
+<div class="h-px w-full bg-gray-100 dark:bg-gray-800"></div>
+<div class="flex w-full items-center justify-between">
+<p class="text-slate-400 dark:text-gray-500 text-xs font-medium">Vize: Açıklanmadı</p>
+<p class="text-slate-400 dark:text-gray-500 text-xs font-medium">2 gün önce</p>
+</div>
+</button>
+<!-- Course Item 3 -->
+<button class="flex w-full flex-col gap-3 rounded-xl bg-white dark:bg-surface-dark p-4 border border-gray-200 dark:border-gray-800 shadow-sm active:scale-[0.99] transition-all hover:border-primary/50 group text-left">
+<div class="flex w-full items-start justify-between gap-4">
+<div class="flex items-start gap-4">
+<div class="flex items-center justify-center rounded-lg bg-emerald-100 dark:bg-emerald-500/20 text-emerald-600 dark:text-emerald-400 shrink-0 size-12 group-hover:bg-emerald-200 dark:group-hover:bg-emerald-500/30 transition-colors">
+<span class="material-symbols-outlined fill-1">code</span>
+</div>
+<div class="flex flex-1 flex-col justify-center">
+<p class="text-slate-900 dark:text-white text-base font-bold leading-tight">Algoritma ve Programlama</p>
+<p class="text-slate-500 dark:text-text-secondary text-sm font-medium mt-0.5">BLM101</p>
+</div>
+</div>
+<div class="flex flex-col items-end">
+<span class="text-primary text-lg font-bold">AA</span>
+<span class="text-xs text-slate-400 dark:text-gray-500 font-medium">92 Puan</span>
+</div>
+</div>
+<div class="h-px w-full bg-gray-100 dark:bg-gray-800"></div>
+<div class="flex w-full items-center justify-between">
+<p class="text-slate-400 dark:text-gray-500 text-xs font-medium">Vize: 90, Final: 94</p>
+<p class="text-slate-400 dark:text-gray-500 text-xs font-medium">Dün güncellendi</p>
+</div>
+</button>
+<!-- Course Item 4 -->
+<button class="flex w-full flex-col gap-3 rounded-xl bg-white dark:bg-surface-dark p-4 border border-gray-200 dark:border-gray-800 shadow-sm active:scale-[0.99] transition-all hover:border-primary/50 group text-left">
+<div class="flex w-full items-start justify-between gap-4">
+<div class="flex items-start gap-4">
+<div class="flex items-center justify-center rounded-lg bg-pink-100 dark:bg-pink-500/20 text-pink-600 dark:text-pink-400 shrink-0 size-12 group-hover:bg-pink-200 dark:group-hover:bg-pink-500/30 transition-colors">
+<span class="material-symbols-outlined fill-1">translate</span>
+</div>
+<div class="flex flex-1 flex-col justify-center">
+<p class="text-slate-900 dark:text-white text-base font-bold leading-tight">İngilizce I</p>
+<p class="text-slate-500 dark:text-text-secondary text-sm font-medium mt-0.5">ING101</p>
+</div>
+</div>
+<div class="flex flex-col items-end">
+<span class="text-primary text-lg font-bold">BA</span>
+<span class="text-xs text-slate-400 dark:text-gray-500 font-medium">82 Puan</span>
+</div>
+</div>
+<div class="h-px w-full bg-gray-100 dark:bg-gray-800"></div>
+<div class="flex w-full items-center justify-between">
+<p class="text-slate-400 dark:text-gray-500 text-xs font-medium">Vize: 85, Final: 80</p>
+<p class="text-slate-400 dark:text-gray-500 text-xs font-medium">3 gün önce</p>
+</div>
+</button>
+</div>
+</main>
+<!-- Bottom Navigation -->
+<nav class="fixed bottom-0 left-0 right-0 z-50 bg-white dark:bg-background-dark/95 backdrop-blur-md border-t border-gray-200 dark:border-gray-800 pb-safe">
+<div class="max-w-md mx-auto flex items-center justify-around h-16 px-2">
+<a class="flex flex-col items-center justify-center gap-1 p-2 text-slate-400 dark:text-gray-500 hover:text-primary dark:hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">calendar_today</span>
+<span class="text-[10px] font-medium">Dersler</span>
+</a>
+<a class="flex flex-col items-center justify-center gap-1 p-2 text-primary" href="#">
+<span class="material-symbols-outlined fill-1">school</span>
+<span class="text-[10px] font-medium">Notlar</span>
+</a>
+<div class="relative -top-5">
+<button class="flex items-center justify-center size-14 rounded-full bg-primary shadow-lg shadow-primary/40 text-white transition-transform active:scale-95">
+<span class="material-symbols-outlined text-3xl">qr_code_scanner</span>
+</button>
+</div>
+<a class="flex flex-col items-center justify-center gap-1 p-2 text-slate-400 dark:text-gray-500 hover:text-primary dark:hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">forum</span>
+<span class="text-[10px] font-medium">Mesajlar</span>
+</a>
+<a class="flex flex-col items-center justify-center gap-1 p-2 text-slate-400 dark:text-gray-500 hover:text-primary dark:hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="text-[10px] font-medium">Profil</span>
+</a>
+</div>
+</nav>
+</div>
+</body></html>

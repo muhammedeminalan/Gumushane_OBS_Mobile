@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="tr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Ders Not Detayı</title>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#2b7cee",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101822",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom scrollbar hiding for cleaner mobile look */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-[#111418] dark:text-white font-display">
+<div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden">
+<!-- Header -->
+<div class="flex flex-col gap-2 p-4 pb-2 sticky top-0 z-10 bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-md">
+<div class="flex items-center h-12 justify-between">
+<div class="text-[#111418] dark:text-white flex size-12 shrink-0 items-center justify-center rounded-full hover:bg-black/5 dark:hover:bg-white/10 cursor-pointer">
+<span class="material-symbols-outlined">arrow_back_ios_new</span>
+</div>
+<!-- Action Link -->
+<div class="flex items-center justify-end">
+<a class="text-primary text-sm font-bold leading-normal tracking-[0.015em] shrink-0 hover:underline" href="#">
+                        Ders Detayı
+                    </a>
+</div>
+</div>
+<!-- Page Title -->
+<div class="px-2">
+<h1 class="text-[#111418] dark:text-white tracking-tight text-[28px] font-bold leading-tight">CS102 - Algoritmalar</h1>
+<p class="text-[#637588] dark:text-[#9da8b9] text-sm font-medium mt-1">2023-2024 Güz Dönemi</p>
+</div>
+</div>
+<!-- Scrollable Content -->
+<div class="flex-1 flex flex-col gap-5 px-4 pb-8">
+<!-- Summary Card -->
+<div class="w-full rounded-xl bg-gradient-to-br from-[#2b7cee] to-[#1a5bb8] p-5 shadow-lg text-white relative overflow-hidden">
+<!-- Decorative background pattern -->
+<div class="absolute -right-10 -top-10 h-40 w-40 rounded-full bg-white/10 blur-3xl"></div>
+<div class="flex justify-between items-end relative z-10">
+<div class="flex flex-col gap-1">
+<span class="text-blue-100 text-sm font-medium">Genel Ortalama</span>
+<div class="flex items-baseline gap-3">
+<span class="text-5xl font-extrabold tracking-tight">82</span>
+<div class="px-2.5 py-0.5 rounded-lg bg-white/20 backdrop-blur-sm border border-white/10">
+<span class="text-base font-bold text-white">BB</span>
+</div>
+</div>
+<div class="flex items-center gap-2 mt-2">
+<span class="material-symbols-outlined text-green-300 text-[20px]">check_circle</span>
+<span class="text-sm font-medium text-white/90">Durum: <span class="text-green-300 font-bold">Geçti</span></span>
+</div>
+</div>
+<!-- Mini Chart Visualization -->
+<div class="flex flex-col items-center gap-2 h-24 justify-end ml-4">
+<div class="flex items-end gap-3 h-full pb-1 border-b border-white/20">
+<!-- Student Bar -->
+<div class="flex flex-col items-center gap-1 group">
+<span class="text-[10px] text-white font-bold opacity-0 group-hover:opacity-100 transition-opacity">82</span>
+<div class="w-6 bg-white rounded-t-sm h-[82%] relative shadow-sm"></div>
+</div>
+<!-- Class Average Bar -->
+<div class="flex flex-col items-center gap-1 group">
+<span class="text-[10px] text-blue-200 font-medium opacity-0 group-hover:opacity-100 transition-opacity">74</span>
+<div class="w-6 bg-blue-300/50 rounded-t-sm h-[74%]"></div>
+</div>
+</div>
+<div class="flex gap-3 w-full justify-between px-1">
+<span class="text-[10px] font-medium text-white/80">Sen</span>
+<span class="text-[10px] font-medium text-white/60">Ort.</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Grade Components Section -->
+<div class="flex flex-col gap-2">
+<h3 class="text-[#111418] dark:text-white text-lg font-bold leading-tight tracking-[-0.015em] pb-2">Not Bileşenleri</h3>
+<!-- List Item: Midterm 1 -->
+<div class="flex flex-col bg-white dark:bg-[#1C242F] rounded-lg shadow-sm border border-gray-100 dark:border-[#2A3441] overflow-hidden">
+<div class="flex gap-4 p-4 justify-between items-center">
+<div class="flex flex-1 flex-col justify-center gap-1">
+<div class="flex items-center gap-2">
+<div class="size-2 rounded-full bg-green-500"></div>
+<p class="text-[#111418] dark:text-white text-base font-semibold leading-normal">Vize 1</p>
+</div>
+<div class="flex items-center gap-3 text-xs text-[#637588] dark:text-[#9da8b9]">
+<span>12 Ekim</span>
+<span class="size-1 rounded-full bg-gray-300 dark:bg-gray-600"></span>
+<span>Ağırlık: %30</span>
+</div>
+</div>
+<div class="shrink-0 flex flex-col items-end gap-1">
+<p class="text-[#111418] dark:text-white text-lg font-bold leading-normal">75</p>
+<span class="text-xs text-[#637588] dark:text-[#9da8b9]">Puan</span>
+</div>
+</div>
+<!-- Progress Bar -->
+<div class="w-full bg-gray-100 dark:bg-[#3b4554] h-1.5">
+<div class="h-full bg-primary rounded-r-full" style="width: 75%;"></div>
+</div>
+</div>
+<!-- List Item: Homework -->
+<div class="flex flex-col bg-white dark:bg-[#1C242F] rounded-lg shadow-sm border border-gray-100 dark:border-[#2A3441] overflow-hidden">
+<div class="flex gap-4 p-4 justify-between items-center">
+<div class="flex flex-1 flex-col justify-center gap-1">
+<div class="flex items-center gap-2">
+<div class="size-2 rounded-full bg-green-500"></div>
+<p class="text-[#111418] dark:text-white text-base font-semibold leading-normal">Ödev</p>
+</div>
+<div class="flex items-center gap-3 text-xs text-[#637588] dark:text-[#9da8b9]">
+<span>05 Kasım</span>
+<span class="size-1 rounded-full bg-gray-300 dark:bg-gray-600"></span>
+<span>Ağırlık: %10</span>
+</div>
+</div>
+<div class="shrink-0 flex flex-col items-end gap-1">
+<p class="text-[#111418] dark:text-white text-lg font-bold leading-normal">90</p>
+<span class="text-xs text-[#637588] dark:text-[#9da8b9]">Puan</span>
+</div>
+</div>
+<!-- Progress Bar -->
+<div class="w-full bg-gray-100 dark:bg-[#3b4554] h-1.5">
+<div class="h-full bg-primary rounded-r-full" style="width: 90%;"></div>
+</div>
+</div>
+<!-- List Item: Project -->
+<div class="flex flex-col bg-white dark:bg-[#1C242F] rounded-lg shadow-sm border border-gray-100 dark:border-[#2A3441] overflow-hidden">
+<div class="flex gap-4 p-4 justify-between items-center">
+<div class="flex flex-1 flex-col justify-center gap-1">
+<div class="flex items-center gap-2">
+<div class="size-2 rounded-full bg-green-500"></div>
+<p class="text-[#111418] dark:text-white text-base font-semibold leading-normal">Dönem Projesi</p>
+</div>
+<div class="flex items-center gap-3 text-xs text-[#637588] dark:text-[#9da8b9]">
+<span>20 Aralık</span>
+<span class="size-1 rounded-full bg-gray-300 dark:bg-gray-600"></span>
+<span>Ağırlık: %20</span>
+</div>
+</div>
+<div class="shrink-0 flex flex-col items-end gap-1">
+<p class="text-[#111418] dark:text-white text-lg font-bold leading-normal">85</p>
+<span class="text-xs text-[#637588] dark:text-[#9da8b9]">Puan</span>
+</div>
+</div>
+<!-- Progress Bar -->
+<div class="w-full bg-gray-100 dark:bg-[#3b4554] h-1.5">
+<div class="h-full bg-primary rounded-r-full" style="width: 85%;"></div>
+</div>
+</div>
+<!-- List Item: Final (Pending) -->
+<div class="flex flex-col bg-white dark:bg-[#1C242F] rounded-lg shadow-sm border border-gray-100 dark:border-[#2A3441] overflow-hidden opacity-80">
+<div class="flex gap-4 p-4 justify-between items-center">
+<div class="flex flex-1 flex-col justify-center gap-1">
+<div class="flex items-center gap-2">
+<div class="size-2 rounded-full bg-gray-400"></div>
+<p class="text-[#111418] dark:text-white text-base font-medium leading-normal">Final Sınavı</p>
+</div>
+<div class="flex items-center gap-3 text-xs text-[#637588] dark:text-[#9da8b9]">
+<span>Tarih Bekleniyor</span>
+<span class="size-1 rounded-full bg-gray-300 dark:bg-gray-600"></span>
+<span>Ağırlık: %40</span>
+</div>
+</div>
+<div class="shrink-0 flex flex-col items-end gap-1">
+<p class="text-[#637588] dark:text-[#9da8b9] text-lg font-bold leading-normal">--</p>
+<span class="text-xs text-[#637588] dark:text-[#9da8b9]">Bekliyor</span>
+</div>
+</div>
+<!-- Empty Progress Bar -->
+<div class="w-full bg-gray-100 dark:bg-[#3b4554] h-1.5"></div>
+</div>
+</div>
+<!-- Additional Actions -->
+<div class="mt-2">
+<button class="w-full flex items-center justify-between p-4 bg-white dark:bg-[#1C242F] rounded-lg shadow-sm border border-gray-100 dark:border-[#2A3441] group active:scale-[0.99] transition-transform">
+<div class="flex items-center gap-3">
+<div class="size-10 rounded-full bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined text-[20px]">notifications_active</span>
+</div>
+<div class="flex flex-col items-start">
+<span class="text-[#111418] dark:text-white text-base font-semibold">Bildirim Geçmişi</span>
+<span class="text-xs text-[#637588] dark:text-[#9da8b9]">Bu derse ait duyurular ve not güncellemeleri</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-[#637588] dark:text-[#9da8b9]">chevron_right</span>
+</button>
+</div>
+<!-- Footer Info -->
+<div class="flex justify-center mt-4 mb-6">
+<p class="text-xs text-center text-[#637588] dark:text-[#9da8b9] max-w-xs">
+                    Notlar 4.0'lık sistem üzerinden harf notuna dönüştürülmüştür. Sınıf ortalaması 74 (CB)'dir.
+                </p>
+</div>
+</div>
+</div>
+</body></html>
